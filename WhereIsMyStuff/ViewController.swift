@@ -20,14 +20,4 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var sampleButton: UIButton!
-
-    @IBAction func clicked(_ sender: Any) {
-        if let title = sampleButton.currentTitle {
-            if title == "Sample" {
-                sampleButton.setTitle("Clicked!", for: UIControlState.normal)
-            }
-        }
-    }
 }
-

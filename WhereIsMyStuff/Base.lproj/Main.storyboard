@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,26 +19,44 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-fS-g5z">
-                                <rect key="frame" x="162" y="318" width="51" height="30"/>
-                                <state key="normal" title="Sample"/>
-                                <connections>
-                                    <action selector="clicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="7oH-5m-DwA"/>
-                                </connections>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-G9-YOK">
+                                <rect key="frame" x="145" y="273" width="124" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bej-5n-F3b">
+                                <rect key="frame" x="178" y="348" width="59" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Login"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-Jk-q21">
+                                <rect key="frame" x="163" y="414" width="88" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Register"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Is My Stuff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWX-OM-V5u">
+                                <rect key="frame" x="66" y="195" width="282" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="2bU-fS-g5z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="146" id="0pk-nU-2rR"/>
-                            <constraint firstItem="2bU-fS-g5z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="298" id="Loa-Wd-cUJ"/>
+                            <constraint firstItem="bej-5n-F3b" firstAttribute="top" secondItem="zSh-G9-YOK" secondAttribute="bottom" constant="41" id="6Ek-r4-iDo"/>
+                            <constraint firstItem="zSh-G9-YOK" firstAttribute="centerX" secondItem="pWX-OM-V5u" secondAttribute="centerX" id="8GK-W5-Gzm"/>
+                            <constraint firstItem="pWX-OM-V5u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="L5C-aK-VCW"/>
+                            <constraint firstItem="DaF-Jk-q21" firstAttribute="top" secondItem="bej-5n-F3b" secondAttribute="bottom" constant="25" id="MFN-iD-7fT"/>
+                            <constraint firstItem="pWX-OM-V5u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="VXM-1Y-sJW"/>
+                            <constraint firstItem="bej-5n-F3b" firstAttribute="centerX" secondItem="zSh-G9-YOK" secondAttribute="centerX" id="dVb-fb-GHi"/>
+                            <constraint firstItem="zSh-G9-YOK" firstAttribute="top" secondItem="pWX-OM-V5u" secondAttribute="bottom" constant="35" id="eDY-Yo-lFW"/>
+                            <constraint firstItem="DaF-Jk-q21" firstAttribute="centerX" secondItem="bej-5n-F3b" secondAttribute="centerX" id="vs4-La-jou"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="sampleButton" destination="2bU-fS-g5z" id="e6J-cY-cHv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
