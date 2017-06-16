@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,23 +22,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-G9-YOK">
-                                <rect key="frame" x="145" y="273" width="124" height="34"/>
+                                <rect key="frame" x="145" y="275" width="124" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bej-5n-F3b">
-                                <rect key="frame" x="178" y="348" width="59" height="41"/>
+                                <rect key="frame" x="177" y="348" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-Jk-q21">
-                                <rect key="frame" x="163" y="414" width="88" height="41"/>
+                                <rect key="frame" x="163" y="410" width="88" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Register"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Is My Stuff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWX-OM-V5u">
-                                <rect key="frame" x="66" y="195" width="282" height="43"/>
+                                <rect key="frame" x="66" y="196" width="282" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,14 +46,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bej-5n-F3b" firstAttribute="top" secondItem="zSh-G9-YOK" secondAttribute="bottom" constant="41" id="6Ek-r4-iDo"/>
-                            <constraint firstItem="zSh-G9-YOK" firstAttribute="centerX" secondItem="pWX-OM-V5u" secondAttribute="centerX" id="8GK-W5-Gzm"/>
-                            <constraint firstItem="pWX-OM-V5u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="L5C-aK-VCW"/>
-                            <constraint firstItem="DaF-Jk-q21" firstAttribute="top" secondItem="bej-5n-F3b" secondAttribute="bottom" constant="25" id="MFN-iD-7fT"/>
-                            <constraint firstItem="pWX-OM-V5u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="VXM-1Y-sJW"/>
-                            <constraint firstItem="bej-5n-F3b" firstAttribute="centerX" secondItem="zSh-G9-YOK" secondAttribute="centerX" id="dVb-fb-GHi"/>
-                            <constraint firstItem="zSh-G9-YOK" firstAttribute="top" secondItem="pWX-OM-V5u" secondAttribute="bottom" constant="35" id="eDY-Yo-lFW"/>
-                            <constraint firstItem="DaF-Jk-q21" firstAttribute="centerX" secondItem="bej-5n-F3b" secondAttribute="centerX" id="vs4-La-jou"/>
+                            <constraint firstItem="bej-5n-F3b" firstAttribute="top" secondItem="zSh-G9-YOK" secondAttribute="bottom" constant="39" id="4Vq-ck-7BH"/>
+                            <constraint firstItem="bej-5n-F3b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7qQ-2t-Td0"/>
+                            <constraint firstItem="zSh-G9-YOK" firstAttribute="top" secondItem="pWX-OM-V5u" secondAttribute="bottom" constant="36" id="PIa-PR-bOe"/>
+                            <constraint firstItem="DaF-Jk-q21" firstAttribute="centerX" secondItem="bej-5n-F3b" secondAttribute="centerX" id="RNu-7W-4fR"/>
+                            <constraint firstItem="zSh-G9-YOK" firstAttribute="centerX" secondItem="bej-5n-F3b" secondAttribute="centerX" id="mAT-W4-Swr"/>
+                            <constraint firstItem="bej-5n-F3b" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tSn-Ok-wjT"/>
+                            <constraint firstItem="pWX-OM-V5u" firstAttribute="centerX" secondItem="zSh-G9-YOK" secondAttribute="centerX" id="w32-vZ-Ni0"/>
+                            <constraint firstItem="DaF-Jk-q21" firstAttribute="top" secondItem="bej-5n-F3b" secondAttribute="bottom" constant="21" id="yff-d3-FEY"/>
                         </constraints>
                     </view>
                 </viewController>
