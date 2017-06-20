@@ -35,6 +35,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA200F5E1EF9E8300018F351 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA200F5F1EF9E83D0018F351 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A354C1EF2BA1600177085 /* Main.storyboard */,
+				EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EA200F601EF9E8420018F351 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A35481EF2BA1600177085 /* AppDelegate.swift */,
+				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EA200F611EF9E84F0018F351 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		EA200F621EF9E8530018F351 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EA4A354F1EF2BA1600177085 /* Assets.xcassets */,
+				EA4A35541EF2BA1600177085 /* Info.plist */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EA4A353C1EF2BA1600177085 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +95,11 @@
 		EA4A35471EF2BA1600177085 /* WhereIsMyStuff */ = {
 			isa = PBXGroup;
 			children = (
-				EA4A35481EF2BA1600177085 /* AppDelegate.swift */,
-				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
-				EA4A354C1EF2BA1600177085 /* Main.storyboard */,
-				EA4A354F1EF2BA1600177085 /* Assets.xcassets */,
-				EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */,
-				EA4A35541EF2BA1600177085 /* Info.plist */,
+				EA200F5E1EF9E8300018F351 /* Model */,
+				EA200F5F1EF9E83D0018F351 /* View */,
+				EA200F601EF9E8420018F351 /* Controller */,
+				EA200F611EF9E84F0018F351 /* Stores */,
+				EA200F621EF9E8530018F351 /* Helpers */,
 			);
 			path = WhereIsMyStuff;
 			sourceTree = "<group>";
