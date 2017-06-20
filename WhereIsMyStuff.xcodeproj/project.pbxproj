@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					EA4A35441EF2BA1600177085 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = TFL9V3G43X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -151,6 +152,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -262,6 +264,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TFL9V3G43X;
 				INFOPLIST_FILE = WhereIsMyStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs2340.WhereIsMyStuff;
@@ -274,6 +277,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TFL9V3G43X;
 				INFOPLIST_FILE = WhereIsMyStuff/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cs2340.WhereIsMyStuff;
@@ -301,6 +305,7 @@
 				EA4A35591EF2BA1600177085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
