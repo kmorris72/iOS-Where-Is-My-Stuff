@@ -22,23 +22,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSh-G9-YOK">
-                                <rect key="frame" x="238.5" y="206.5" width="124" height="34"/>
+                                <rect key="frame" x="145.66666666666669" y="274.66666666666669" width="124.00000000000006" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bej-5n-F3b">
-                                <rect key="frame" x="270.5" y="279.5" width="59" height="41"/>
+                                <rect key="frame" x="177.66666666666666" y="347.66666666666669" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <segue destination="yS2-0U-86y" kind="presentation" id="uPz-fd-P3k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-Jk-q21">
-                                <rect key="frame" x="256.5" y="341.5" width="88" height="41"/>
+                                <rect key="frame" x="163.66666666666666" y="409.66666666666669" width="88" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="H16-cG-0LT" kind="presentation" id="CxJ-DS-xJ6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Is My Stuff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWX-OM-V5u">
-                                <rect key="frame" x="159.5" y="127.5" width="282" height="43"/>
+                                <rect key="frame" x="66.666666666666686" y="195.66666666666666" width="282" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,9 +63,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mko-Fx-e8c"/>
-                    <connections>
-                        <segue destination="yS2-0U-86y" kind="presentation" id="wwx-JY-AdX"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +126,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Register"/>
+                                <connections>
+                                    <segue destination="H16-cG-0LT" kind="presentation" id="5TF-U0-9lv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -205,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWB-ia-wnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804.3478260869567" y="768.75000000000011"/>
+            <point key="canvasLocation" x="1774" y="876"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9LI-8b-NJQ">
@@ -226,4 +232,7 @@
             <point key="canvasLocation" x="117.39130434782609" y="122.28260869565219"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5TF-U0-9lv"/>
+    </inferredMetricsTieBreakers>
 </document>
