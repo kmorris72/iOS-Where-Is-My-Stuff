@@ -1,3 +1,13 @@
+//
+//  Model.swift
+//  WhereIsMyStuff
+//
+//  Created by Kipp Morris on 6/23/17.
+//  Copyright © 2017 Fiveloop. All rights reserved.
+//
+
+import UIKit
+
 class Model {
     
     private static var userManager = UserManager.getInstance()
@@ -51,7 +61,7 @@ class Model {
     public func searchResult(foundItem: Bool, name: String) -> String {
         return Model.itemManager.searchResult(foundItem: foundItem, name: name)
     }
-
+    
     struct User {
         private var _firstName: String!
         private var _lastName: String!
