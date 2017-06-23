@@ -1,4 +1,56 @@
-public class Model {
+class Model {
+    
+    private static var userManager = UserManager.getInstance()
+    private static var itemManager = ItemManager.getInstance()
+    private static let instance = Model()
+    
+    public static func getInstance() -> Model {
+        return instance
+    }
+    
+    public func addUser(firstName: String, lastName: String, email: String, username: String, password1: String, password2: String, isAdmin: Bool) -> Int {
+        return Model.userManager.addUser(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2, isAdmin: isAdmin)
+    }
+    
+    public func loginUser(usernameEmail: String, password: String) -> Int {
+        return Model.userManager.loginUser(usernameEmail: usernameEmail, password: password)
+    }
+    
+    public func getName() -> String {
+        return Model.userManager.getName()
+    }
+    
+    public func getCurrentUser() -> User {
+        return Model.userManager.getCurrentUser()
+    }
+    
+    public func getItemTypes() -> Array<ItemType> {
+        return ItemType.values
+    }
+    
+    public func addLostItem(name: String, type: Int, description: String, user: User) {
+        Model.itemManager.addLostItem(name: name, typePosition: type, description: description, user: user)
+    }
+    
+    public func addFoundItem(name: String, type: Int, description: String, user: User) {
+        Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user)
+    }
+    
+    public func getLostItems() -> Array<Item> {
+        return Model.itemManager.getLostItems()
+    }
+    
+    public func getFoundItems() -> Array<Item> {
+        return Model.itemManager.getFoundItems()
+    }
+    
+    public func searchFound(foundItem: Bool, name: String) -> Bool {
+        return Model.itemManager.searchFound(foundItem: foundItem, name: name)
+    }
+    
+    public func searchResult(foundItem: Bool, name: String) -> String {
+        return Model.itemManager.searchResult(foundItem: foundItem, name: name)
+    }
 
     struct User {
         private var _firstName: String!
@@ -33,8 +85,8 @@ public class Model {
         private static let instance = UserManager()
         
         private init() {
-            _users = Dictionary()
-            _emailUser = Dictionary()
+            _users = Dictionary<String, User>()
+            _emailUser = Dictionary<String, String>()
             setUp()
         }
         
@@ -84,6 +136,46 @@ public class Model {
             }
             return code
         }
+        
+        mutating func loginUser(usernameEmail: String, password: String) -> Int {
+            let usernameEmail = usernameEmail.trimmingCharacters(in: .whitespacesAndNewlines)
+            let user: User!
+            let username: Bool
+            if (usernameEmail.range(of: "@") != nil) {
+                user = _users[usernameEmail]
+                username = true
+            } else {
+                user = _users[_emailUser[usernameEmail]!]
+                username = false
+            }
+            if (usernameEmail.characters.count == 0 || password.characters.count == 0) {
+                return 1
+            } else if (user == nil && username) {
+                return 2
+            } else if (user == nil) {
+                return 3
+            } else if (!user.checkPassword(password: password)) {
+                return 4
+            } else {
+                if (username) {
+                    _currentUser = _users[usernameEmail]!
+                } else {
+                    _currentUser = _users[_emailUser[usernameEmail]!]
+                }
+                return 0
+            }
+        }
+        
+        func getName() -> String {
+            if (_currentUser != nil) {
+                return _currentUser.getName()
+            }
+            return "Anonymous"
+        }
+        
+        func getCurrentUser() -> User {
+            return _currentUser
+        }
     }
     
     struct Item: CustomStringConvertible {
@@ -121,5 +213,57 @@ public class Model {
         case personal = "Personal"
         case pet = "Pet"
         case other = "Other"
+        
+        static let values = [technological, furniture, recreational, personal, pet, other]
     }
+    
+    struct ItemManager {
+        private var _lostItems: Dictionary<String, Item>
+        private var _foundItems: Dictionary<String, Item>
+        private static let instance = ItemManager()
+        
+        private init() {
+            _lostItems = Dictionary<String, Item>()
+            _foundItems = Dictionary<String, Item>()
+        }
+        
+        static func getInstance() -> ItemManager {
+            return instance
+        }
+        
+        mutating func addLostItem(name: String, typePosition: Int, description: String, user: User) {
+            let type = ItemType.values[typePosition]
+            _lostItems.updateValue(Item(name: name, type: type, description: description, user: user), forKey: name)
+        }
+        
+        mutating func addFoundItem(name: String, typePosition: Int, description: String, user: User) {
+            let type = ItemType.values[typePosition]
+            _foundItems.updateValue(Item(name: name, type: type, description: description, user: user), forKey: name)
+        }
+        
+        func getLostItems() -> Array<Item> {
+            return Array(_lostItems.values)
+        }
+        
+        func getFoundItems() -> Array<Item> {
+            return Array(_foundItems.values)
+        }
+        
+        func searchFound(foundItem: Bool, name: String) -> Bool {
+            if (foundItem) {
+                return _foundItems[name] != nil
+            } else {
+                return _lostItems[name] != nil
+            }
+        }
+        
+        func searchResult(foundItem: Bool, name: String) -> String {
+            if (foundItem) {
+                return _foundItems[name]!.getDescription()
+            } else {
+                return _lostItems[name]!.getDescription()
+            }
+        }
+    }
+    
 }
