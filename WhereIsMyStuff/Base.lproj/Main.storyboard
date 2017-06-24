@@ -32,7 +32,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="yS2-0U-86y" kind="presentation" id="uPz-fd-P3k"/>
+                                    <segue destination="yS2-0U-86y" kind="presentation" identifier="Welcome-&gt;Login" id="uPz-fd-P3k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-Jk-q21">
@@ -40,7 +40,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="H16-cG-0LT" kind="presentation" id="CxJ-DS-xJ6"/>
+                                    <segue destination="H16-cG-0LT" kind="presentation" identifier="Welcome-&gt;Register" id="CxJ-DS-xJ6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where Is My Stuff" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWX-OM-V5u">
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="1024.6376811594205" y="122.28260869565219"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="B3K-yl-uhY">
             <objects>
-                <viewController id="yS2-0U-86y" sceneMemberID="viewController">
+                <viewController id="yS2-0U-86y" customClass="LoginViewController" customModule="WhereIsMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NMt-aD-r8K"/>
                         <viewControllerLayoutGuide type="bottom" id="rw5-O6-8uL"/>
@@ -120,23 +120,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onLoginButtonClick:" destination="yS2-0U-86y" eventType="touchUpInside" id="ghB-Fm-Gfb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPa-B9-JS9">
                                 <rect key="frame" x="147" y="531" width="120" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Exit"/>
                                 <connections>
-                                    <segue destination="H16-cG-0LT" kind="presentation" id="5TF-U0-9lv"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="Login-&gt;Welcome" id="BpG-SZ-R5A"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="3m5-KP-X1B" id="cjv-dn-EWQ"/>
+                        <outlet property="password" destination="Fru-6l-oit" id="962-fZ-Zd1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oR8-nd-jnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="122"/>
+            <point key="canvasLocation" x="1857" y="6"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gjD-RW-kO2">
@@ -233,6 +240,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5TF-U0-9lv"/>
+        <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>
 </document>

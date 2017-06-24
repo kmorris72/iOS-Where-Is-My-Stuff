@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA31DA2D1EFC50EF0050749E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354F1EF2BA1600177085 /* Assets.xcassets */; };
+		EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */; };
 		EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A35481EF2BA1600177085 /* AppDelegate.swift */; };
 		EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A354A1EF2BA1600177085 /* ViewController.swift */; };
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = WhereIsMyStuff/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
 		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
@@ -59,6 +61,7 @@
 			children = (
 				EA4A35481EF2BA1600177085 /* AppDelegate.swift */,
 				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
+				EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */,
 			);
 			name = Controller;
 			path = Base.lproj;
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */,
 				EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */,
 				EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */,
 				EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */,
