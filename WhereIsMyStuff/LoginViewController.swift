@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    private static let model = Model.getInstance()
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -24,7 +26,21 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLoginButtonClick(_ sender: Any) {
-        let alert = UIAlertController(title: nil, message: "Hello", preferredStyle: UIAlertControllerStyle.alert)
+        let code = LoginViewController.model.loginUser(usernameEmail: email.text!, password: password.text!)
+        let alert: UIAlertController
+        if (code == 0) {
+            alert = UIAlertController(title: nil, message: "Login Successful!", preferredStyle: UIAlertControllerStyle.alert)
+        } else if (code == 1) {
+            alert = UIAlertController(title: nil, message: "Please Enter Username/Email and Password", preferredStyle: UIAlertControllerStyle.alert)
+        } else if (code == 2) {
+            alert = UIAlertController(title: nil, message: "Username Not In Database", preferredStyle: UIAlertControllerStyle.alert)
+        } else if (code == 3) {
+            alert = UIAlertController(title: nil, message: "Email Not In Database", preferredStyle: UIAlertControllerStyle.alert)
+        } else if (code == 4) {
+            alert = UIAlertController(title: nil, message: "Username/Email Or Password Incorrect", preferredStyle: UIAlertControllerStyle.alert)
+        } else {
+            alert = UIAlertController(title: nil, message: "ERROR", preferredStyle: UIAlertControllerStyle.alert)
+        }
         present(alert, animated: true, completion: nil)
     }
 
