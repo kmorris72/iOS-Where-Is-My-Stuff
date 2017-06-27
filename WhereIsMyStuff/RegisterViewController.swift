@@ -10,6 +10,8 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    private static let model = Model.getInstance()
+    
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -18,7 +20,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password2: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var adminSwitch: UISwitch!
+    @IBOutlet weak var _adminSwitch: UISwitch!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +35,7 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func onRegisterButtonClick(_ sender: Any) {
-        // Implement
+        let thing = RegisterViewController.model.addUser(firstName: firstName.text, lastName: lastName.text, email: email.text, username: username.text, password1: password1.text, password2: password2.text, isAdmin: _adminSwitch.isOn)
     }
     
 }

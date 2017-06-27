@@ -308,7 +308,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="adminSwitch" destination="atc-af-Deb" id="DHM-xD-N0s"/>
+                        <outlet property="_adminSwitch" destination="atc-af-Deb" id="Npo-2w-rua"/>
                         <outlet property="cancelButton" destination="Gbm-P9-B7v" id="Le3-KK-yho"/>
                         <outlet property="email" destination="SKv-fx-mWD" id="vDL-8e-9gu"/>
                         <outlet property="firstName" destination="Rvz-gA-3IZ" id="9sV-1a-AWc"/>

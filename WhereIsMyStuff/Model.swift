@@ -18,7 +18,7 @@ class Model {
         return instance
     }
     
-    public func addUser(firstName: String, lastName: String, email: String, username: String, password1: String, password2: String, isAdmin: Bool) -> Int {
+    public func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
         return Model.userManager.addUser(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2, isAdmin: isAdmin)
     }
     
@@ -150,14 +150,14 @@ class Model {
             return 0
         }
         
-        mutating func addUser(firstName: String, lastName: String, email: String, username: String, password1: String, password2: String, isAdmin: Bool) -> Int {
-            let firstName = firstName.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = lastName.trimmingCharacters(in: .whitespacesAndNewlines)
-            let email = email.trimmingCharacters(in: .whitespacesAndNewlines)
-            let username = username.trimmingCharacters(in: .whitespacesAndNewlines)
+        mutating func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
             let code = validateInput(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2)
             if (code == 0) {
-                let newUser = User(firstName: firstName, lastName: lastName, email: email, username: username, password: password1, isAdmin: isAdmin)
+                let firstName = firstName!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let lastName = lastName!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let email = email!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let username = username!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let newUser = User(firstName: firstName, lastName: lastName, email: email, username: username, password: password1!, isAdmin: isAdmin)
                 _users.updateValue(newUser, forKey: username)
                 _emailUser.updateValue(username, forKey: email)
                 _currentUser = newUser
