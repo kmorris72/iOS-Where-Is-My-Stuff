@@ -246,7 +246,6 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="onRegisterButtonClick:" destination="H16-cG-0LT" eventType="touchUpInside" id="Tnb-CY-hB5"/>
-                                    <segue destination="RMw-iP-nwp" kind="presentation" id="AC2-Pu-RRH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocd-yL-bfm">
@@ -300,9 +299,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="WSK-qq-b4x"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -317,6 +313,7 @@
                         <outlet property="password2" destination="XsU-eO-NLs" id="fTm-mD-uOJ"/>
                         <outlet property="registerButton" destination="k7L-fY-VmB" id="T1F-8V-Os0"/>
                         <outlet property="username" destination="JCs-oW-Pee" id="RZe-xF-Pvx"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Register -&gt; Welcome" modalTransitionStyle="partialCurl" id="JtI-cy-QuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWB-ia-wnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +340,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WSK-qq-b4x"/>
-        <segue reference="AC2-Pu-RRH"/>
+        <segue reference="JtI-cy-QuW"/>
     </inferredMetricsTieBreakers>
 </document>
