@@ -108,7 +108,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="onLoginButtonClick:" destination="yS2-0U-86y" eventType="touchUpInside" id="ghB-Fm-Gfb"/>
+                                    <segue destination="RMw-iP-nwp" kind="presentation" id="Tn8-Tp-Gyb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPa-B9-JS9">
@@ -137,7 +137,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oR8-nd-jnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856.521739130435" y="5.7065217391304355"/>
+            <point key="canvasLocation" x="1820" y="-321"/>
+        </scene>
+        <!--Welcome Page Controller-->
+        <scene sceneID="yS3-Kw-VAk">
+            <objects>
+                <viewController title="Welcome Page Controller" id="RMw-iP-nwp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="taT-qu-3u6"/>
+                        <viewControllerLayoutGuide type="bottom" id="J1k-lg-Ehx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6q8-Xd-Oao">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Where's My Stuff!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goT-op-4zf">
+                                <rect key="frame" x="-20" y="75" width="454" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlP-Ki-z4f">
+                                <rect key="frame" x="12" y="203" width="391" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Click Here if you lost something"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-lc-gkk">
+                                <rect key="frame" x="12" y="359" width="391" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Click Here if you found something"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-2a-138" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2992.753623188406" y="204.61956521739131"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="gjD-RW-kO2">
@@ -207,6 +246,7 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="onRegisterButtonClick:" destination="H16-cG-0LT" eventType="touchUpInside" id="Tnb-CY-hB5"/>
+                                    <segue destination="RMw-iP-nwp" kind="presentation" id="AC2-Pu-RRH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ocd-yL-bfm">
@@ -281,7 +321,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWB-ia-wnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.913043478261" y="875.54347826086962"/>
+            <point key="canvasLocation" x="1820" y="766"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9LI-8b-NJQ">
@@ -304,5 +344,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WSK-qq-b4x"/>
+        <segue reference="AC2-Pu-RRH"/>
     </inferredMetricsTieBreakers>
 </document>
