@@ -24,12 +24,15 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func onLoginButtonClick(_ sender: Any) {
         let code = LoginViewController.model.loginUser(usernameEmail: email.text!, password: password.text!)
         let alert: UIAlertController
         if (code == 0) {
             alert = UIAlertController(title: nil, message: "Login Successful!", preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "Login -> Start", sender: self)})
+            alert.addAction(alertAction)
+            present(alert, animated: true, completion: nil)
         } else if (code == 1) {
             alert = UIAlertController(title: nil, message: "Please Enter Username/Email and Password", preferredStyle: UIAlertControllerStyle.alert)
         } else if (code == 2) {
@@ -45,7 +48,6 @@ class LoginViewController: UIViewController {
         alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
     }
-
     /*
     // MARK: - Navigation
 

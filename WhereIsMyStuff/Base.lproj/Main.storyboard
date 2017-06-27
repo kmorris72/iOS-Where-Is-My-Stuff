@@ -108,7 +108,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <segue destination="RMw-iP-nwp" kind="presentation" id="Tn8-Tp-Gyb"/>
+                                    <action selector="onLoginButtonClick:" destination="yS2-0U-86y" eventType="touchUpInside" id="vGJ-eR-QJz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPa-B9-JS9">
@@ -133,11 +133,12 @@
                     <connections>
                         <outlet property="email" destination="3m5-KP-X1B" id="cjv-dn-EWQ"/>
                         <outlet property="password" destination="Fru-6l-oit" id="962-fZ-Zd1"/>
+                        <segue destination="RMw-iP-nwp" kind="presentation" identifier="Login -&gt; Start" modalTransitionStyle="partialCurl" id="YA1-6d-jw0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oR8-nd-jnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-321"/>
+            <point key="canvasLocation" x="2130" y="122"/>
         </scene>
         <!--Welcome Page Controller-->
         <scene sceneID="yS3-Kw-VAk">
@@ -176,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-2a-138" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2992.753623188406" y="204.61956521739131"/>
+            <point key="canvasLocation" x="3120" y="122"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="gjD-RW-kO2">
@@ -299,6 +300,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="LZ2-93-bWh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWB-ia-wnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="766"/>
+            <point key="canvasLocation" x="1025" y="1011"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9LI-8b-NJQ">
@@ -336,10 +340,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lb-Ga-GBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="122.28260869565219"/>
+            <point key="canvasLocation" x="120" y="103"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JtI-cy-QuW"/>
+        <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>
 </document>

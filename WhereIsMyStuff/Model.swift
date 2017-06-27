@@ -165,30 +165,40 @@ class Model {
             return code
         }
         
-        mutating func loginUser(usernameEmail: String, password: String) -> Int {
-            let usernameEmail = usernameEmail.trimmingCharacters(in: .whitespacesAndNewlines)
+        mutating func loginUser(usernameEmail: String?, password: String?) -> Int {
+            let _usernameEmail: String
+            let _password: String
+            if (usernameEmail == nil || password == nil) {
+                return 1
+            } else {
+                _usernameEmail = usernameEmail!
+                _password = password!
+            }
+            if (_usernameEmail.characters.count == 0 || _password.characters.count == 0) {
+                return 1
+            }
             let user: User!
             let username: Bool
-            if (usernameEmail.range(of: "@") != nil) {
-                user = _users[usernameEmail]
+            if (_usernameEmail.range(of: "@") != nil) {
+                user = _users[_usernameEmail]
                 username = true
             } else {
-                user = _users[_emailUser[usernameEmail]!]
+                if (_emailUser[_usernameEmail] == nil) {
+                    return 3
+                } else {
+                    user = _users[_emailUser[_usernameEmail]!]
+                }
                 username = false
             }
-            if (usernameEmail.characters.count == 0 || password.characters.count == 0) {
-                return 1
-            } else if (user == nil && username) {
+            if (user == nil && username) {
                 return 2
-            } else if (user == nil) {
-                return 3
-            } else if (!user.checkPassword(password: password)) {
+            } else if (!user.checkPassword(password: _password)) {
                 return 4
             } else {
                 if (username) {
-                    _currentUser = _users[usernameEmail]!
+                    _currentUser = _users[_usernameEmail]!
                 } else {
-                    _currentUser = _users[_emailUser[usernameEmail]!]
+                    _currentUser = _users[_emailUser[_usernameEmail]!]
                 }
                 return 0
             }
