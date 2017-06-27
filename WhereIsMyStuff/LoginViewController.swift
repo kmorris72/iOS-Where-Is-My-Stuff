@@ -41,6 +41,8 @@ class LoginViewController: UIViewController {
         } else {
             alert = UIAlertController(title: nil, message: "ERROR", preferredStyle: UIAlertControllerStyle.alert)
         }
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(alertAction)
         present(alert, animated: true, completion: nil)
     }
 
