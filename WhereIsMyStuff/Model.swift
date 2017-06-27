@@ -108,28 +108,46 @@ class Model {
             addUser(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password1: "pass", password2: "pass", isAdmin: true)
         }
         
-        private func validateInput(firstName: String!, lastName: String!, email: String!, username: String!, password1: String!, password2: String!) -> Int {
-            if (firstName == nil || lastName == nil || firstName.characters.count == 0 || lastName.characters.count == 0) {
-                return 1
-            } else if (email == nil || email.characters.count == 4 || email.range(of: "@") == nil) {
-                return 2
-            } else if (username == nil || username.characters.count == 0) {
-                return 3
-            } else if (username.range(of: " ") != nil) {
-                return 4
-            } else if (username.range(of: "@") != nil) {
-                return 5
-            } else if (password1 == nil || password2 == nil || password1.characters.count == 0 || password2.characters.count == 0) {
-                return 6
-            } else if (!(password1 == password2)) {
-                return 7
-            } else if (_emailUser[email] != nil) {
-                return 8
-            } else if (_users[username] != nil) {
-                return 9
+        private func validateInput(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?) -> Int {
+            if let firstName = firstName, let lastName = lastName {
+                if (firstName.characters.count == 0 || lastName.characters.count == 0) {
+                    return 1
+                }
             } else {
-                return 0
+                return 1
             }
+            if let email = email {
+                if (email.characters.count == 4 || email.range(of: "@") == nil) {
+                    return 2
+                } else if (_emailUser[email] != nil) {
+                    return 8
+                }
+            } else {
+                return 2
+            }
+            if let username = username {
+                if (username.characters.count == 0) {
+                    return 3
+                } else if (username.range(of: " ") != nil) {
+                    return 4
+                } else if (username.range(of: "@") != nil) {
+                    return 5
+                } else if (_users[username] != nil) {
+                    return 9
+                }
+            } else {
+                return 3
+            }
+            if let password1 = password1, let password2 = password2 {
+                if (password1.characters.count == 0 || password2.characters.count == 0) {
+                    return 6
+                } else if (!(password1 == password2)) {
+                    return 7
+                }
+            } else {
+                return 6
+            }
+            return 0
         }
         
         mutating func addUser(firstName: String, lastName: String, email: String, username: String, password1: String, password2: String, isAdmin: Bool) -> Int {
