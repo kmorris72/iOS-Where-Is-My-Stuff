@@ -179,7 +179,7 @@ class Model {
             }
             let user: User!
             let username: Bool
-            if (_usernameEmail.range(of: "@") != nil) {
+            if (_usernameEmail.range(of: "@") == nil) {
                 user = _users[_usernameEmail]
                 username = true
             } else {

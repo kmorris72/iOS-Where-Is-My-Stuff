@@ -27,26 +27,20 @@ class LoginViewController: UIViewController {
 
     @IBAction func onLoginButtonClick(_ sender: Any) {
         let code = LoginViewController.model.loginUser(usernameEmail: email.text!, password: password.text!)
-        let alert: UIAlertController
         if (code == 0) {
-            alert = UIAlertController(title: nil, message: "Login Successful!", preferredStyle: UIAlertControllerStyle.alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "Login -> Start", sender: self)})
-            alert.addAction(alertAction)
-            present(alert, animated: true, completion: nil)
+            AlertHelper.makeAlert(message: "Login Successful!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "Login -> Start", sender: self)})
         } else if (code == 1) {
-            alert = UIAlertController(title: nil, message: "Please Enter Username/Email and Password", preferredStyle: UIAlertControllerStyle.alert)
+            AlertHelper.makeAlert(message: "Please Enter Username/Email and Password", controller: self)
         } else if (code == 2) {
-            alert = UIAlertController(title: nil, message: "Username Not In Database", preferredStyle: UIAlertControllerStyle.alert)
+            AlertHelper.makeAlert(message: "Username Not In Database", controller: self)
         } else if (code == 3) {
-            alert = UIAlertController(title: nil, message: "Email Not In Database", preferredStyle: UIAlertControllerStyle.alert)
+            AlertHelper.makeAlert(message: "Email Not In Database", controller: self)
         } else if (code == 4) {
-            alert = UIAlertController(title: nil, message: "Username/Email Or Password Incorrect", preferredStyle: UIAlertControllerStyle.alert)
+            AlertHelper.makeAlert(message: "Username/Email Or Password Incorrect", controller: self)
         } else {
-            alert = UIAlertController(title: nil, message: "ERROR", preferredStyle: UIAlertControllerStyle.alert)
+            AlertHelper.makeAlert(message: "ERROR", controller: self)
         }
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
+    
     }
     /*
     // MARK: - Navigation

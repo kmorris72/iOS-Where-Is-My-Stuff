@@ -11,6 +11,8 @@
 		EA31DA2D1EFC50EF0050749E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354F1EF2BA1600177085 /* Assets.xcassets */; };
 		EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */; };
 		EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3DC2441F02CDB70060071F /* RegisterViewController.swift */; };
+		EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */; };
+		EA4079841F058F230015020D /* EnterLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4079831F058F230015020D /* EnterLostItemViewController.swift */; };
 		EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A35481EF2BA1600177085 /* AppDelegate.swift */; };
 		EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A354A1EF2BA1600177085 /* ViewController.swift */; };
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		EA0167711F05664B00F45124 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = WhereIsMyStuff/AlertHelper.swift; sourceTree = SOURCE_ROOT; };
 		EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = WhereIsMyStuff/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA3DC2441F02CDB70060071F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = WhereIsMyStuff/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterFoundItemViewController.swift; path = WhereIsMyStuff/EnterFoundItemViewController.swift; sourceTree = SOURCE_ROOT; };
+		EA4079831F058F230015020D /* EnterLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterLostItemViewController.swift; path = ../EnterLostItemViewController.swift; sourceTree = "<group>"; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
 		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
@@ -67,6 +71,8 @@
 				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
 				EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */,
 				EA3DC2441F02CDB70060071F /* RegisterViewController.swift */,
+				EA4079831F058F230015020D /* EnterLostItemViewController.swift */,
+				EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */,
 			);
 			name = Controller;
 			path = Base.lproj;
@@ -195,6 +201,8 @@
 				EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */,
 				EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */,
 				EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */,
+				EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */,
+				EA4079841F058F230015020D /* EnterLostItemViewController.swift in Sources */,
 				EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

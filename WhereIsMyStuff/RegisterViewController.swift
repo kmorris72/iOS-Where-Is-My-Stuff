@@ -37,7 +37,6 @@ class RegisterViewController: UIViewController {
         let code = RegisterViewController.model.addUser(firstName: firstName.text, lastName: lastName.text, email: email.text, username: username.text, password1: password1.text, password2: password2.text, isAdmin: _adminSwitch.isOn)
         if (code == 0) {
             AlertHelper.makeAlert(message: "User Added!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "Register->Welcome", sender: self)})
-            // intent code remember
         } else if (code == 1) {
             AlertHelper.makeAlert(message: "Name Invalid", controller: self)
         } else if (code == 2) {
