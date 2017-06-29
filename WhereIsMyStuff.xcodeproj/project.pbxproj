@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0167721F05664B00F45124 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0167711F05664B00F45124 /* AlertHelper.swift */; };
 		EA31DA2D1EFC50EF0050749E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354F1EF2BA1600177085 /* Assets.xcassets */; };
 		EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */; };
 		EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3DC2441F02CDB70060071F /* RegisterViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA0167711F05664B00F45124 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = WhereIsMyStuff/AlertHelper.swift; sourceTree = SOURCE_ROOT; };
 		EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = WhereIsMyStuff/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA3DC2441F02CDB70060071F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = WhereIsMyStuff/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 		EA200F621EF9E8530018F351 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EA0167711F05664B00F45124 /* AlertHelper.swift */,
 				EA4A354F1EF2BA1600177085 /* Assets.xcassets */,
 				EA4A35541EF2BA1600177085 /* Info.plist */,
 			);
@@ -187,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA0167721F05664B00F45124 /* AlertHelper.swift in Sources */,
 				EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */,
 				EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */,
 				EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */,

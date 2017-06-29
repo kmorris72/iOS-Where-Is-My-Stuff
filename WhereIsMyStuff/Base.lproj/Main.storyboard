@@ -317,7 +317,7 @@
                         <outlet property="password2" destination="XsU-eO-NLs" id="fTm-mD-uOJ"/>
                         <outlet property="registerButton" destination="k7L-fY-VmB" id="T1F-8V-Os0"/>
                         <outlet property="username" destination="JCs-oW-Pee" id="RZe-xF-Pvx"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Register -&gt; Welcome" modalTransitionStyle="partialCurl" id="JtI-cy-QuW"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Register-&gt;Welcome" modalTransitionStyle="partialCurl" id="JtI-cy-QuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWB-ia-wnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,6 +344,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BpG-SZ-R5A"/>
+        <segue reference="JtI-cy-QuW"/>
     </inferredMetricsTieBreakers>
 </document>
