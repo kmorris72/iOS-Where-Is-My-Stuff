@@ -43,7 +43,8 @@ class Model {
     }
     
     public func addFoundItem(name: String, type: Int, description: String, user: User) {
-        Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user)
+        //Where does the user field come in??
+        return Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user)
     }
     
     public func getLostItems() -> Array<Item> {
