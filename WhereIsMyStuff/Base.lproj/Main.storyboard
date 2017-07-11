@@ -182,6 +182,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Search Items"/>
+                                <connections>
+                                    <segue destination="c83-Dh-Ayx" kind="presentation" id="AQE-FJ-vIa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tC5-UT-0t0">
                                 <rect key="frame" x="313" y="61" width="81" height="44"/>
@@ -541,12 +544,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-SV-FQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4242" y="705"/>
+            <point key="canvasLocation" x="4242" y="241"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8nj-O4-YA8">
+            <objects>
+                <viewController id="c83-Dh-Ayx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X1w-MM-wkN"/>
+                        <viewControllerLayoutGuide type="bottom" id="YGX-Gm-qNS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wjn-rX-NV3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search For an Item!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVY-eV-7uS">
+                                <rect key="frame" x="87" y="51" width="240" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsI-Bg-kw1">
+                                <rect key="frame" x="20" y="168" width="103" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EtX-OJ-oPP">
+                                <rect key="frame" x="176" y="168" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgY-tI-nWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4183" y="1041"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bJz-AB-99V"/>
-        <segue reference="1U0-wv-8uM"/>
         <segue reference="JtI-cy-QuW"/>
+        <segue reference="1U0-wv-8uM"/>
+        <segue reference="BTm-Qb-Qc4"/>
     </inferredMetricsTieBreakers>
 </document>
