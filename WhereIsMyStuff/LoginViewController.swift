@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func onLoginButtonClick(_ sender: Any) {
-        let code = LoginViewController.model.loginUser(usernameEmail: email.text!, password: password.text!)
+        let code = LoginViewController.model.loginUser(usernameEmail: email.text, password: password.text)
         if (code == 0) {
             AlertHelper.makeAlert(message: "Login Successful!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "Login -> Start", sender: self)})
         } else if (code == 1) {
