@@ -200,10 +200,11 @@ class Model {
         }
     
         func getName() -> String {
-            if (_currentUser != nil) {
+            if let _currentUser = _currentUser {
                 return _currentUser.getName()
+            } else {
+                return "Anonymous"
             }
-            return "Anonymous"
         }
         
         func getCurrentUser() -> User {
