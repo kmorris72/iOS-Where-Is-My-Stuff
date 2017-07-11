@@ -14,51 +14,51 @@ class Model {
     private static var itemManager = ItemManager.getInstance()
     private static let instance = Model()
     
-    public static func getInstance() -> Model {
+    static func getInstance() -> Model {
         return instance
     }
     
-    public func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
+    func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
         return Model.userManager.addUser(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2, isAdmin: isAdmin)
     }
     
-    public func loginUser(usernameEmail: String, password: String) -> Int {
+    func loginUser(usernameEmail: String?, password: String?) -> Int {
         return Model.userManager.loginUser(usernameEmail: usernameEmail, password: password)
     }
     
-    public func getName() -> String {
+    func getName() -> String {
         return Model.userManager.getName()
     }
     
-    public func getCurrentUser() -> User {
+    func getCurrentUser() -> User {
         return Model.userManager.getCurrentUser()
     }
     
-    public func getItemTypes() -> Array<ItemType> {
+    func getItemTypes() -> Array<ItemType> {
         return ItemType.values
     }
     
-    public func addLostItem(name: String, type: Int, description: String, user: User) {
+    func addLostItem(name: String, type: Int, description: String, user: User) {
         Model.itemManager.addLostItem(name: name, typePosition: type, description: description, user: user)
     }
     
-    public func addFoundItem(name: String, type: Int, description: String, user: User) {
+    func addFoundItem(name: String, type: Int, description: String, user: User) {
         Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user)
     }
     
-    public func getLostItems() -> Array<Item> {
+    func getLostItems() -> Array<Item> {
         return Model.itemManager.getLostItems()
     }
     
-    public func getFoundItems() -> Array<Item> {
+    func getFoundItems() -> Array<Item> {
         return Model.itemManager.getFoundItems()
     }
     
-    public func searchFound(foundItem: Bool, name: String) -> Bool {
+    func searchFound(foundItem: Bool, name: String) -> Bool {
         return Model.itemManager.searchFound(foundItem: foundItem, name: name)
     }
     
-    public func searchResult(foundItem: Bool, name: String) -> String {
+    func searchResult(foundItem: Bool, name: String) -> String {
         return Model.itemManager.searchResult(foundItem: foundItem, name: name)
     }
     
@@ -166,44 +166,39 @@ class Model {
         }
         
         mutating func loginUser(usernameEmail: String?, password: String?) -> Int {
-            let _usernameEmail: String
-            let _password: String
-            if (usernameEmail == nil || password == nil) {
-                return 1
-            } else {
-                _usernameEmail = usernameEmail!
-                _password = password!
-            }
-            if (_usernameEmail.characters.count == 0 || _password.characters.count == 0) {
-                return 1
-            }
-            let user: User!
-            let username: Bool
-            if (_usernameEmail.range(of: "@") == nil) {
-                user = _users[_usernameEmail]
-                username = true
-            } else {
-                if (_emailUser[_usernameEmail] == nil) {
-                    return 3
+            if let _usernameEmail = usernameEmail, let _password = password {
+                if (_usernameEmail.characters.count == 0 || _password.characters.count == 0) {
+                    return 1
+                }
+                let user: User?
+                let username: Bool
+                if (_usernameEmail.range(of: "@") == nil) {
+                    user = _users[_usernameEmail]
+                    username = true
                 } else {
                     user = _users[_emailUser[_usernameEmail]!]
+                    username = false
                 }
-                username = false
-            }
-            if (user == nil && username) {
-                return 2
-            } else if (!user.checkPassword(password: _password)) {
-                return 4
-            } else {
-                if (username) {
-                    _currentUser = _users[_usernameEmail]!
+                if (_usernameEmail.characters.count == 0 || password?.characters.count == 0) {
+                    return 1
+                }
+                else if let user = user {
+                    if (!user.checkPassword(password: _password)) {
+                        return 4
+                    } else {
+                        _currentUser = user
+                        return 0
+                    }
+                } else if username {
+                    return 2
                 } else {
-                    _currentUser = _users[_emailUser[_usernameEmail]!]
+                    return 3
                 }
-                return 0
+            } else {
+                return 1
             }
         }
-        
+    
         func getName() -> String {
             if (_currentUser != nil) {
                 return _currentUser.getName()
