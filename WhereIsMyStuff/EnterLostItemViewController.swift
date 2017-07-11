@@ -2,7 +2,7 @@
 //  EnterLostItemViewController.swift
 //  WhereIsMyStuff
 //
-//  Created by Kipp Morris on 6/29/17.
+//  Created by Rahul V Brahmal on 7/11/17.
 //  Copyright © 2017 Fiveloop. All rights reserved.
 //
 
@@ -28,7 +28,9 @@ class EnterLostItemViewController: UIViewController {
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
-        // implement
+        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: itemType, description: itemDescription.text!)
+        
+        
     }
 
     /*
