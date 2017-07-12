@@ -540,7 +540,8 @@
                     <connections>
                         <outlet property="itemDescription" destination="Ajy-tF-JYL" id="5vN-b4-98v"/>
                         <outlet property="itemName" destination="5Xe-rS-wDa" id="5I6-rq-2KH"/>
-                        <outlet property="itemType" destination="rKT-oo-bia" id="ea1-8L-5Lg"/>
+                        <outlet property="itemTypePicker" destination="rKT-oo-bia" id="GM5-SU-gXL"/>
+                        <segue destination="RMw-iP-nwp" kind="presentation" identifier="EnterFoundItem-&gt;Welcome" id="koE-Yb-N5Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-SV-FQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -609,8 +610,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ckM-M9-V5p"/>
-        <segue reference="1U0-wv-8uM"/>
         <segue reference="BpG-SZ-R5A"/>
+        <segue reference="1U0-wv-8uM"/>
+        <segue reference="koE-Yb-N5Q"/>
     </inferredMetricsTieBreakers>
 </document>

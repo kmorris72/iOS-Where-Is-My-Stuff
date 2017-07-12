@@ -63,7 +63,6 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
 //        }
         EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
         AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "EnterLostItem->Welcome", sender: self)})
-        print(EnterLostItemViewController.model.getLostItems())
     }
 
     /*
