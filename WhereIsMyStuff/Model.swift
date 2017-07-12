@@ -38,8 +38,8 @@ class Model {
         return ItemType.values
     }
     
-    func addLostItem(name: String, type: Int, description: String, user: User) {
-        Model.itemManager.addLostItem(name: name, typePosition: type, description: description, user: user)
+    func addLostItem(name: String, typePosition: Int, description: String, user: User) {
+        Model.itemManager.addLostItem(name: name, typePosition: typePosition, description: description, user: user)
     }
     
 
@@ -213,28 +213,28 @@ class Model {
             return _currentUser
         }
         
-        mutating func addLostItem(name: String?, typePosition: String?, description: String?) -> Int {
-            //Can the Spinner be a string?
-            let _name: String?
-            let _typePosition: String?
-            let _description: String?
-            
-            if (name == nil || typePosition == nil || description == nil) {
-    
-                return 1
-            } else {
-                _name = name
-                _typePosition = typePosition
-                _description = description
-            }
-            
-            if (_name!.characters.count == 0 ||  _typePosition!.characters.count == 0 || _description!.characters.count == 0) {
-                
-                return 1
-            }
-            
-            return 0;
-        }
+//        mutating func addLostItem(name: String?, typePosition: String?, description: String?) -> Int {
+//            //Can the Spinner be a string?
+//            let _name: String?
+//            let _typePosition: String?
+//            let _description: String?
+//            
+//            if (name == nil || typePosition == nil || description == nil) {
+//    
+//                return 1
+//            } else {
+//                _name = name
+//                _typePosition = typePosition
+//                _description = description
+//            }
+//            
+//            if (_name!.characters.count == 0 ||  _typePosition!.characters.count == 0 || _description!.characters.count == 0) {
+//                
+//                return 1
+//            }
+//            
+//            return 0;
+//        }
     }
     
     struct Item: CustomStringConvertible {
