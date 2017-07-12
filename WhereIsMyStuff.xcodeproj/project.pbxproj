@@ -27,13 +27,13 @@
 		EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterFoundItemViewController.swift; path = WhereIsMyStuff/EnterFoundItemViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4079831F058F230015020D /* EnterLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterLostItemViewController.swift; path = ../EnterLostItemViewController.swift; sourceTree = "<group>"; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
-		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
+		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
+		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
 		EA4A354D1EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Assets.xcassets"; sourceTree = "<absolute>"; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
-		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
+		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Model.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
