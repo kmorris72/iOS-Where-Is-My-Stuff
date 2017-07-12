@@ -48,8 +48,19 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
+<<<<<<< HEAD
         let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, type: 67, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
+=======
+        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, type: itemType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
+>>>>>>> 8fce3b125f6be9ac7cc5acd1de76c2bb00bc8e39
         
+        if (code == 0) {
+            AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self)
+        } else if (code == 1) {
+            AlertHelper.makeAlert(message: "Please Enter the Item Name, Select The Location and Enter the Item Description", controller: self);
+        } else {
+            AlertHelper.makeAlert(message: "ERROR", controller: self)
+        }
         
     }
 
