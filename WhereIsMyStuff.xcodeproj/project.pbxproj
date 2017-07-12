@@ -17,6 +17,7 @@
 		EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A354A1EF2BA1600177085 /* ViewController.swift */; };
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
 		EA4A35531EF2BA1600177085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */; };
+		EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */; };
 		EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB16AB1EFDD1F8004FFB8D /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,13 +28,19 @@
 		EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterFoundItemViewController.swift; path = WhereIsMyStuff/EnterFoundItemViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4079831F058F230015020D /* EnterLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterLostItemViewController.swift; path = ../EnterLostItemViewController.swift; sourceTree = "<group>"; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
-		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
+		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WhereIsMyStuff/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WhereIsMyStuff/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4A354D1EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Assets.xcassets"; sourceTree = "<absolute>"; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Model.swift"; sourceTree = "<absolute>"; };
+=======
+		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
+		EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WhereIsMyStuff/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
+>>>>>>> b9fc1f754a511297efc05fe2be5dc0186f7df086
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +78,7 @@
 				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
 				EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */,
 				EA3DC2441F02CDB70060071F /* RegisterViewController.swift */,
+				EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */,
 				EA4079831F058F230015020D /* EnterLostItemViewController.swift */,
 				EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */,
 			);
@@ -196,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */,
 				EA0167721F05664B00F45124 /* AlertHelper.swift in Sources */,
 				EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */,
 				EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */,

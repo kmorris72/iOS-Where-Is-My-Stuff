@@ -17,6 +17,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var itemDescription: UITextView!
     
     var pickerData: [Model.ItemType] = []
+    var pickerType: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,12 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         return pickerData[row].rawValue
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerType = row
+    }
+    
     @IBAction func onEnterButtonClick(_ sender: Any) {
+<<<<<<< HEAD
 
         let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, type: 67, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
 
@@ -59,6 +65,17 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
             AlertHelper.makeAlert(message: "ERROR", controller: self)
         }
         
+=======
+//        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
+//        if (code == 0) {
+//            AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self)
+//        } else if (code == 1) {
+//            AlertHelper.makeAlert(message: "Please Enter the Item Name, Select The Location and Enter the Item Description", controller: self);
+//        } else {
+//            AlertHelper.makeAlert(message: "ERROR", controller: self)
+//        }
+        EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
+>>>>>>> b9fc1f754a511297efc05fe2be5dc0186f7df086
     }
 
     /*

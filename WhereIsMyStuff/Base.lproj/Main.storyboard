@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="2130" y="122"/>
         </scene>
-        <!--Welcome Page Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="yS3-Kw-VAk">
             <objects>
-                <viewController title="Welcome Page Controller" id="RMw-iP-nwp" sceneMemberID="viewController">
+                <viewController id="RMw-iP-nwp" customClass="WelcomeViewController" customModule="WhereIsMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="taT-qu-3u6"/>
                         <viewControllerLayoutGuide type="bottom" id="J1k-lg-Ehx"/>
@@ -165,7 +165,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Enter Lost Item"/>
                                 <connections>
-                                    <segue destination="Sfj-eL-XV4" kind="presentation" id="VgA-DZ-SRX"/>
+                                    <segue destination="Sfj-eL-XV4" kind="presentation" id="PtQ-mD-Wjs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-lc-gkk">
@@ -286,7 +286,7 @@
                     <connections>
                         <outlet property="itemDescription" destination="Dui-5D-8dL" id="Urf-Vk-mNf"/>
                         <outlet property="itemName" destination="AfU-gW-dZ9" id="YVc-ls-w68"/>
-                        <outlet property="itemType" destination="bQT-1s-bGi" id="Xyd-VJ-AMi"/>
+                        <outlet property="itemTypePicker" destination="bQT-1s-bGi" id="hkZ-XE-Zdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly2-hM-Drs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,7 +608,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JtI-cy-QuW"/>
+        <segue reference="BpG-SZ-R5A"/>
         <segue reference="1U0-wv-8uM"/>
         <segue reference="bJz-AB-99V"/>
     </inferredMetricsTieBreakers>
