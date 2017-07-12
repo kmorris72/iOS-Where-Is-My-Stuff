@@ -30,9 +30,9 @@
 		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/AppDelegate.swift"; sourceTree = "<absolute>"; };
 		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewController.swift"; sourceTree = "<absolute>"; };
 		EA4A354D1EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Assets.xcassets"; sourceTree = "<absolute>"; };
+		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Assets.xcassets"; sourceTree = "<absolute>"; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
+		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Model.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
