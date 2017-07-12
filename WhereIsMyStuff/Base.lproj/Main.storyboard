@@ -287,6 +287,7 @@
                         <outlet property="itemDescription" destination="Dui-5D-8dL" id="Urf-Vk-mNf"/>
                         <outlet property="itemName" destination="AfU-gW-dZ9" id="YVc-ls-w68"/>
                         <outlet property="itemTypePicker" destination="bQT-1s-bGi" id="hkZ-XE-Zdw"/>
+                        <segue destination="RMw-iP-nwp" kind="presentation" identifier="EnterLostItem-&gt;Welcome" id="ckM-M9-V5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly2-hM-Drs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,8 +609,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BpG-SZ-R5A"/>
+        <segue reference="ckM-M9-V5p"/>
         <segue reference="1U0-wv-8uM"/>
-        <segue reference="bJz-AB-99V"/>
+        <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>
 </document>
