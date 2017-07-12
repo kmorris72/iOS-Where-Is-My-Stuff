@@ -28,14 +28,14 @@ class EnterLostItemViewController: UIViewController {
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
-        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: itemType, description: itemDescription.text!, user: self)
+        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, type: itemType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
         
         if (code == 0) {
             AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self)
         } else if (code == 1) {
-            AlertHelper.makeAlert(message: "Please Enter the Item Name, Select The Location and Enter the Item Description");
+            AlertHelper.makeAlert(message: "Please Enter the Item Name, Select The Location and Enter the Item Description", controller: self);
         } else {
-            AlertHelper.makeAlert(message: "ERROR", controller.self)
+            AlertHelper.makeAlert(message: "ERROR", controller: self)
         }
         
     }
