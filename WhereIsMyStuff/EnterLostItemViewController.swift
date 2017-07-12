@@ -17,7 +17,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var itemDescription: UITextView!
     
     var pickerData: [Model.ItemType] = []
-    var pickerType: Int = -1
+    var pickerType: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
