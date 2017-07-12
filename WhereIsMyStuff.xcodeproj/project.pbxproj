@@ -33,14 +33,11 @@
 		EA4A354D1EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Assets.xcassets"; sourceTree = "<absolute>"; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = "/Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Model.swift"; sourceTree = "<absolute>"; };
-=======
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/kippmorris/Desktop/iOS-Where-Is-My-Stuff/WhereIsMyStuff/Info.plist"; sourceTree = "<absolute>"; };
 		EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WhereIsMyStuff/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
->>>>>>> b9fc1f754a511297efc05fe2be5dc0186f7df086
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
