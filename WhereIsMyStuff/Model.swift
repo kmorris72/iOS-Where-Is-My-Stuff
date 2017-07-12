@@ -226,7 +226,7 @@ class Model {
                 _description = description
             }
             
-            if (_name.characters.count == 0 ||  _typePosition.characters.count == 0 || _description.characters.count == 0) {
+            if (_name!.characters.count == 0 ||  _typePosition!.characters.count == 0 || _description!.characters.count == 0) {
                 
                 return 1
             }
