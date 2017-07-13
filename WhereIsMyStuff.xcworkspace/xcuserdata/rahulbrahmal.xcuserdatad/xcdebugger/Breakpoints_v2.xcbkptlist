@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhereIsMyStuff/EnterLostItemViewController.swift"
-            timestampString = "521663525.690609"
+            timestampString = "521678386.499754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "locationManager(manager:didUpdateLocations:)"
             landmarkType = "7">
          </BreakpointContent>

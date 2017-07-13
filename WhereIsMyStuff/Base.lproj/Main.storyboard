@@ -291,6 +291,7 @@
                         <outlet property="itemDescription" destination="Dui-5D-8dL" id="Urf-Vk-mNf"/>
                         <outlet property="itemName" destination="AfU-gW-dZ9" id="YVc-ls-w68"/>
                         <outlet property="itemTypePicker" destination="bQT-1s-bGi" id="hkZ-XE-Zdw"/>
+                        <outlet property="map" destination="skr-C1-bwc" id="vMW-su-jdH"/>
                         <segue destination="RMw-iP-nwp" kind="presentation" identifier="EnterLostItem-&gt;Welcome" id="ckM-M9-V5p"/>
                     </connections>
                 </viewController>
@@ -614,8 +615,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LZ2-93-bWh"/>
         <segue reference="uPz-fd-P3k"/>
-        <segue reference="ckM-M9-V5p"/>
+        <segue reference="BpG-SZ-R5A"/>
+        <segue reference="YA1-6d-jw0"/>
     </inferredMetricsTieBreakers>
 </document>
