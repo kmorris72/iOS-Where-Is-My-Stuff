@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class Model {
+    
+    let ref = Database.database().reference()
     
     private static var userManager = UserManager.getInstance()
     private static var itemManager = ItemManager.getInstance()
