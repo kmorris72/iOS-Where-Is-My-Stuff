@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
     private static let model = Model.getInstance()
     
@@ -17,8 +18,14 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var itemTypePicker: UIPickerView!
     @IBOutlet weak var itemDescription: UITextView!
     
+    @IBOutlet weak var map: MKMapView!
+    let locationManager = CLLocationManager()
+    
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
+    
+//    var userLat: Double = 0
+//    var userLong: Double = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +34,19 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.itemTypePicker.delegate = self
         self.itemTypePicker.dataSource = self
         
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
+        }
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self //Not compiling here
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
         }
     }
 
@@ -52,6 +70,40 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerType = row
     }
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]!) {
+        
+        var locValue: CLLocationCoordinate2D = manager.location!.coordinate
+        
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        
+        let center = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
+        
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        self.map.setRegion(region, animated: true)
+
+        var currentLocation = CLLocation()
+        
+        var locationLat = currentLocation.coordinate.latitude
+        var locationLong = currentLocation.coordinate.longitude
+        
+        print("locations = \(locationLat) \(locationLong) \(currentLocation.coordinate.latitude) \(currentLocation.coordinate.longitude)")
+        
+//        userLat = locValue.latitude
+//        userLong = locValue.longitude
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        
+        print("Error while updating location " + error.localizedDescription)
+    }
+    
+    func locationManagerDIdPauseLocationUpdates(manager: CLLocationManager!) {
+        
+    }
+    
+    
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
 //        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
