@@ -43,7 +43,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         gestureRecognizer.minimumPressDuration = 1.0
         //gestureRecognizer.delegate = self
         self.map.addGestureRecognizer(gestureRecognizer)
-         
+        
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
         }
@@ -108,6 +108,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
             self.map.addAnnotation(annotation)
         }
     }
+
     
 
     @IBAction func onEnterButtonClick(_ sender: Any) {

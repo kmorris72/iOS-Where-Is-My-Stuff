@@ -37,6 +37,11 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
+        
+        gestureRecognizer.minimumPressDuration = 1.0
+        self.map.addGestureRecognizer(gestureRecognizer)
+        
         for type in EnterFoundItemViewController.model.getItemTypes() {
             pickerData.append(type)
         }
@@ -76,6 +81,20 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
         map.setRegion(region, animated:true)
         
         self.map.showsUserLocation = true
+    }
+    
+    func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
+        
+        if gesture.state == .ended {
+            let point = gesture.location(in: self.map)
+            let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
+            print (coordinate)
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = "Found Item Location"
+            annotation.subtitle = "Location of Found Item"
+            self.map.addAnnotation(annotation)
+        }
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
