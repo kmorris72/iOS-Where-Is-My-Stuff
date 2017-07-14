@@ -38,12 +38,12 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         
-        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action:(#selector(longPress)))
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(addAnnotationOnLongPress(gesture:)))
         
-        gestureRecognizer.minimumPressDuration = 2.0
+        gestureRecognizer.minimumPressDuration = 1.0
         //gestureRecognizer.delegate = self
-        map.addGestureRecognizer(gestureRecognizer)
-        
+        self.map.addGestureRecognizer(gestureRecognizer)
+         
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
         }
@@ -86,13 +86,27 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.map.showsUserLocation = true
     }
     
-    func longPress(gestureRecognizer: UILongPressGestureRecognizer) {
+//    func longPress(gestureRecognizer: UILongPressGestureRecognizer) {
+//        
+//        let coordinate = map.centerCoordinate
+//        
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = coordinate
+//        map.addAnnotation(annotation)
+//    }
+    
+    func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
         
-        let coordinate = map.centerCoordinate
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        map.addAnnotation(annotation)
+        if gesture.state == .ended {
+            let point = gesture.location(in: self.map)
+            let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
+            print (coordinate)
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = coordinate
+            annotation.title = "Lost Location Item"
+            annotation.subtitle = "Location of Lost Item"
+            self.map.addAnnotation(annotation)
+        }
     }
     
 
