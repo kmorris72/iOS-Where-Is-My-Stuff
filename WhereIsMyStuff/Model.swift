@@ -10,12 +10,11 @@ import UIKit
 import FirebaseDatabase
 
 class Model {
-    
-    let ref = Database.database().reference()
-    
     private static var userManager = UserManager.getInstance()
     private static var itemManager = ItemManager.getInstance()
     private static let instance = Model()
+    
+    private static let databaseRef = Database.database().reference()
     
     static func getInstance() -> Model {
         return instance
@@ -99,9 +98,12 @@ class Model {
         private var _emailUser: Dictionary<String, String>
         private static let instance = UserManager()
         
+        private let usersDatabase: DatabaseReference
+        
         private init() {
             _users = Dictionary<String, User>()
             _emailUser = Dictionary<String, String>()
+            usersDatabase = Model.databaseRef.child("users")
             setUp()
         }
         
@@ -166,6 +168,8 @@ class Model {
                 _users.updateValue(newUser, forKey: username)
                 _emailUser.updateValue(username, forKey: email)
                 _currentUser = newUser
+                
+                self.usersDatabase.child(username).setValue("hello")
             }
             return code
         }
