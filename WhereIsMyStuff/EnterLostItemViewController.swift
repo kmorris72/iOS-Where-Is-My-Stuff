@@ -86,15 +86,6 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         self.map.showsUserLocation = true
     }
     
-//    func longPress(gestureRecognizer: UILongPressGestureRecognizer) {
-//        
-//        let coordinate = map.centerCoordinate
-//        
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = coordinate
-//        map.addAnnotation(annotation)
-//    }
-    
     func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
         
         if gesture.state == .ended {
