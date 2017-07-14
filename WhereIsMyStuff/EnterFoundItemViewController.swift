@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
     private static let model = Model.getInstance()
     
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var itemTypePicker: UIPickerView!
     @IBOutlet weak var itemDescription: UITextView!
+    
+    @IBOutlet weak var map: MKMapView!
+    
+    let manager = CLLocationManager()
     
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
@@ -25,6 +31,11 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         self.itemTypePicker.delegate = self
         self.itemTypePicker.dataSource = self
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
         
         for type in EnterFoundItemViewController.model.getItemTypes() {
             pickerData.append(type)
@@ -50,6 +61,21 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerType = row
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
+        
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        map.setRegion(region, animated:true)
+        
+        self.map.showsUserLocation = true
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
+class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, CLLocationManagerDelegate {
     
     private static let model = Model.getInstance()
     
@@ -26,25 +26,6 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
     
-    let regionRadius: CLLocationDistance = 200
-    
-    var userLat: Double = 33.748995
-    var userLong: Double = -84.387982
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        let location = locations[0]
-        
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
-        
-        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        
-        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-        
-        map.setRegion(region, animated: true)
-        
-        self.map.showsUserLocation = true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +66,21 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         pickerType = row
     }
     
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
+        
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        map.setRegion(region, animated: true)
+        
+        self.map.showsUserLocation = true
+    }
+
     @IBAction func onEnterButtonClick(_ sender: Any) {
 //        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
 //        if (code == 0) {
