@@ -26,7 +26,6 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -38,6 +37,12 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
+        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action:(#selector(longPress)))
+        
+        gestureRecognizer.minimumPressDuration = 2.0
+        //gestureRecognizer.delegate = self
+        map.addGestureRecognizer(gestureRecognizer)
         
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
@@ -80,6 +85,16 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         self.map.showsUserLocation = true
     }
+    
+    func longPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        
+        let coordinate = map.centerCoordinate
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        map.addAnnotation(annotation)
+    }
+    
 
     @IBAction func onEnterButtonClick(_ sender: Any) {
 //        let code = EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
