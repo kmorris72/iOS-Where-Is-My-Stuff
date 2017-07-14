@@ -43,5 +43,7 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Where Is My Stuff would like to use your current location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Where is My Stuff is currently using your location</string>
 </dict>
 </plist>

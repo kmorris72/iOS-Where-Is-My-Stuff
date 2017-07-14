@@ -21,6 +21,7 @@
 		EAC488C91F17B2C600E1020B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */; };
 		EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */; };
 		EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB16AB1EFDD1F8004FFB8D /* Model.swift */; };
+		F2E947EB1F18523B0063249B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E947EA1F18523B0063249B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WhereIsMyStuff/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WhereIsMyStuff/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
+		F2E947EA1F18523B0063249B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2E947EB1F18523B0063249B /* CoreLocation.framework in Frameworks */,
 				A925B515B904F56DED7B574B /* Pods_WhereIsMyStuff.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +62,7 @@
 		9E4156B61F40CB48B231EAEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2E947EA1F18523B0063249B /* CoreLocation.framework */,
 				B52606322A719B2926B338AA /* Pods_WhereIsMyStuff.framework */,
 			);
 			name = Frameworks;

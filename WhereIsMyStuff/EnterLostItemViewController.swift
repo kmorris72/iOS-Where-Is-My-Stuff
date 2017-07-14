@@ -19,57 +19,44 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var itemDescription: UITextView!
     
     @IBOutlet weak var map: MKMapView!
-    var locationManager = CLLocationManager()
+    
+    
+    let manager = CLLocationManager()
     
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
     
     let regionRadius: CLLocationDistance = 200
     
-    var userLat: Double = 0.0
-    var userLong: Double = 0.0
-
+    var userLat: Double = 33.748995
+    var userLong: Double = -84.387982
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations[0]
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
+        
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        
+        map.setRegion(region, animated: true)
+        
+        self.map.showsUserLocation = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        self.itemTypePicker.delegate = self
-//        self.itemTypePicker.dataSource = self
-//        
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
+        self.itemTypePicker.delegate = self
+        self.itemTypePicker.dataSource = self
         
-        map.delegate = self
-        map.showsUserLocation = true
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-
-        if (CLLocationManager.locationServicesEnabled()) {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.requestWhenInUseAuthorization()
-        }
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        if (CLLocationManager.locationServicesEnabled()) {
-            locationManager.startUpdatingLocation()
-        }
-        
-//        let noLocation = CLLocationCoordinate2D()
-//        let viewRegion = MKCoordinateRegionMakeWithDistance(noLocation, 50000, 50000)
-//        map.setRegion(viewRegion, animated: false)
-        
-        DispatchQueue.main.async {
-            self.locationManager.startUpdatingLocation()
-        }
-        
-        let currentLocation = CLLocation(latitude: userLat, longitude: userLong)
-        
-        centerMapOnLocation(location: currentLocation)
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
         
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
@@ -97,36 +84,6 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerType = row
     }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [CLLocation]) {
-        
-//        let location = locations.last as! CLLocation
-//        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//        var region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
-//        region.center = map.userLocation.coordinate
-//        map.setRegion(region, animated: true)
-        
-        var locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        
-        userLat = locValue.latitude
-        userLong = locValue.longitude
-        
-    }
-    
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        
-        print("Error while updating location " + error.localizedDescription)
-    }
-    
-    func locationManagerDIdPauseLocationUpdates(manager: CLLocationManager!) {
-        
-    }
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
-        map.setRegion(coordinateRegion, animated: true)
-    }
-    
     
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
