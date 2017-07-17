@@ -98,7 +98,7 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
-        EnterFoundItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterFoundItemViewController.model.getCurrentUser())
+        EnterFoundItemViewController.model.addFoundItem(name: itemName.text!, type: pickerType, description: itemDescription.text!, user: EnterFoundItemViewController.model.getCurrentUser())
         AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "EnterFoundItem->Welcome", sender: self)})
     }
 
