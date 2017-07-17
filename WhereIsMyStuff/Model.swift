@@ -169,7 +169,14 @@ class Model {
                 _emailUser.updateValue(username, forKey: email)
                 _currentUser = newUser
                 
-                self.usersDatabase.child(username).setValue("hello")
+                // pretty sure it correctly adds user to database, but let's try to make it more concise
+                let userRef = self.usersDatabase.child(username)
+                userRef.child("firstName").setValue(firstName)
+                userRef.child("lastName").setValue(lastName)
+                userRef.child("email").setValue(email)
+                userRef.child("username").setValue(username)
+                userRef.child("password").setValue(password1)
+                userRef.child("isAdmin").setValue(isAdmin)
             }
             return code
         }
