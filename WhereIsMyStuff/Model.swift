@@ -98,12 +98,12 @@ class Model {
         private var _emailUser: Dictionary<String, String>
         private static let instance = UserManager()
         
-        private let usersDatabase: DatabaseReference
+        private let _usersDatabase: DatabaseReference
         
         private init() {
             _users = Dictionary<String, User>()
             _emailUser = Dictionary<String, String>()
-            usersDatabase = Model.databaseRef.child("users")
+            _usersDatabase = Model.databaseRef.child("users")
             setUp()
         }
         
@@ -169,8 +169,8 @@ class Model {
                 _emailUser.updateValue(username, forKey: email)
                 _currentUser = newUser
                 
-                // may still need to add name field to database (firstname and lastName separated by a space)
-                let userRef = self.usersDatabase.child(username)
+                // may still need to add name field to database (firstname and lastName separated by a space) bc they have it in theirs
+                let userRef = self._usersDatabase.child(username)
                 let userMirror = Mirror(reflecting: _currentUser as User)
                 for (label, value) in userMirror.children {
                     userRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
@@ -293,9 +293,14 @@ class Model {
         private var _foundItems: Dictionary<String, Item>
         private static let instance = ItemManager()
         
+        private let _lostItemsDatabase: DatabaseReference
+        private let _foundItemsDatabase: DatabaseReference
+        
         private init() {
             _lostItems = Dictionary<String, Item>()
             _foundItems = Dictionary<String, Item>()
+            _lostItemsDatabase = Model.databaseRef.child("lost items")
+            _foundItemsDatabase = Model.databaseRef.child("found items")
         }
         
         static func getInstance() -> ItemManager {
@@ -304,12 +309,44 @@ class Model {
         
         mutating func addLostItem(name: String, typePosition: Int, description: String, user: User) {
             let type = ItemType.values[typePosition]
-            _lostItems.updateValue(Item(name: name, type: type, description: description, user: user), forKey: name)
+            let item = Item(name: name, type: type, description: description, user: user)
+            _lostItems.updateValue(item, forKey: name)
+            let itemMirror = Mirror(reflecting: item)
+            let itemRef = _lostItemsDatabase.child(name)
+            for (label, value) in itemMirror.children {
+                switch value {
+                    case is ItemType:
+                        itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue((value as! ItemType).rawValue)
+                    case is User:
+                        let userMirror = Mirror(reflecting: value as! User)
+                        for (label, value) in userMirror.children {
+                            itemRef.child("user").child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                        }
+                    default:
+                        itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                }
+            }
         }
         
         mutating func addFoundItem(name: String, typePosition: Int, description: String, user: User) {
             let type = ItemType.values[typePosition]
-            _foundItems.updateValue(Item(name: name, type: type, description: description, user: user), forKey: name)
+            let item = Item(name: name, type: type, description: description, user: user)
+            _foundItems.updateValue(item, forKey: name)
+            let itemMirror = Mirror(reflecting: item)
+            let itemRef = _foundItemsDatabase.child(name)
+            for (label, value) in itemMirror.children {
+                switch value {
+                case is ItemType:
+                    itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue((value as! ItemType).rawValue)
+                case is User:
+                    let userMirror = Mirror(reflecting: value as! User)
+                    for (label, value) in userMirror.children {
+                        itemRef.child("user").child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                    }
+                default:
+                    itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                }
+            }
         }
         
         func getLostItems() -> Array<Item> {
