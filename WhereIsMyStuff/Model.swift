@@ -20,6 +20,11 @@ class Model {
         return instance
     }
     
+    func setUp() {
+        Model.userManager.setUp()
+        //Model.itemManager.setUp()
+    }
+    
     func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
         return Model.userManager.addUser(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2, isAdmin: isAdmin)
     }
