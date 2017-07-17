@@ -72,7 +72,7 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
         
         let location = locations[0]
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.20, 0.20)
         
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         

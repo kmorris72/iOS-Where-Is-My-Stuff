@@ -20,19 +20,20 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     @IBOutlet weak var map: MKMapView!
     
-    
-    let manager = CLLocationManager()
+    var manager:CLLocationManager!
     
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
     
+    var numLocation: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         self.itemTypePicker.delegate = self
         self.itemTypePicker.dataSource = self
-        
+
+        manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
@@ -47,6 +48,8 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         for type in EnterLostItemViewController.model.getItemTypes() {
             pickerData.append(type)
         }
+        
+        
         
     }
 
@@ -75,7 +78,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         let location = locations[0]
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.05, 0.05)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.20, 0.20)
         
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         
@@ -84,6 +87,8 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         map.setRegion(region, animated: true)
         
         self.map.showsUserLocation = true
+//        self.map.setUserTrackingMode(.follow, animated: true)
+        
     }
     
     func addAnnotationOnLongPress(gesture: UILongPressGestureRecognizer) {
