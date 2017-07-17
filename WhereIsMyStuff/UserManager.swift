@@ -37,7 +37,10 @@ class UserManager {
     private func setUp() {
         addUser(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password1: "pass", password2: "pass", isAdmin: true)
         _usersDatabase.observe(DataEventType.value, with: { (snapshot) in
-            print(self._users)
+            for userSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                let user = Model.User(firstName: userSnap.childSnapshot(forPath: "firstName").value as! String, lastName: userSnap.childSnapshot(forPath: "lastName").value as! String, email: userSnap.childSnapshot(forPath: "email").value as! String, username: userSnap.childSnapshot(forPath: "username").value as! String, password: userSnap.childSnapshot(forPath: "password").value as! String, isAdmin: userSnap.childSnapshot(forPath: "isAdmin").value as! Bool)
+                self._users[user.getUsername()] = user
+            }
         })
     }
     
