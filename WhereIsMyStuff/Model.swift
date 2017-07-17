@@ -169,14 +169,12 @@ class Model {
                 _emailUser.updateValue(username, forKey: email)
                 _currentUser = newUser
                 
-                // pretty sure it correctly adds user to database, but let's try to make it more concise
+                // may still need to add name field to database (firstname and lastName separated by a space)
                 let userRef = self.usersDatabase.child(username)
-                userRef.child("firstName").setValue(firstName)
-                userRef.child("lastName").setValue(lastName)
-                userRef.child("email").setValue(email)
-                userRef.child("username").setValue(username)
-                userRef.child("password").setValue(password1)
-                userRef.child("isAdmin").setValue(isAdmin)
+                let userMirror = Mirror(reflecting: _currentUser as User)
+                for (label, value) in userMirror.children {
+                    userRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                }
             }
             return code
         }
