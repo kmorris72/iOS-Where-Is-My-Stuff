@@ -59,12 +59,12 @@ class ItemManager {
         let itemRef = _foundItemsDatabase.child(name)
         for (label, value) in itemMirror.children {
             switch value {
-            case is Model.ItemType:
-                itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue((value as! Model.ItemType).rawValue)
-            case is Model.User:
-                let userMirror = Mirror(reflecting: value as! Model.User)
-                for (label, value) in userMirror.children {
-                    itemRef.child("user").child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                case is Model.ItemType:
+                    itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue((value as! Model.ItemType).rawValue)
+                case is Model.User:
+                    let userMirror = Mirror(reflecting: value as! Model.User)
+                    for (label, value) in userMirror.children {
+                        itemRef.child("user").child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
                 }
             default:
                 itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
