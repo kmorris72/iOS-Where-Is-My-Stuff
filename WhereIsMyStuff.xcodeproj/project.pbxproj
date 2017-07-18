@@ -18,6 +18,7 @@
 		EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A354A1EF2BA1600177085 /* ViewController.swift */; };
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
 		EA4A35531EF2BA1600177085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */; };
+		EA553B311F1D89FC00DFB079 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */; };
 		EAAF619E1F1D66930069EC2D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF619D1F1D66930069EC2D /* UserManager.swift */; };
 		EAAF61A01F1D67920069EC2D /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF619F1F1D67920069EC2D /* ItemManager.swift */; };
 		EAC488C91F17B2C600E1020B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */; };
@@ -42,6 +43,7 @@
 		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = WhereIsMyStuff/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WhereIsMyStuff/Info.plist; sourceTree = SOURCE_ROOT; };
+		EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = WhereIsMyStuff/DatabaseHelper.swift; sourceTree = SOURCE_ROOT; };
 		EAAF619D1F1D66930069EC2D /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = WhereIsMyStuff/UserManager.swift; sourceTree = SOURCE_ROOT; };
 		EAAF619F1F1D67920069EC2D /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemManager.swift; path = WhereIsMyStuff/ItemManager.swift; sourceTree = SOURCE_ROOT; };
 		EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WhereIsMyStuff/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -125,6 +127,7 @@
 		EA200F621EF9E8530018F351 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */,
 				EA0167711F05664B00F45124 /* AlertHelper.swift */,
 				EA4A354F1EF2BA1600177085 /* Assets.xcassets */,
 				EA4A35541EF2BA1600177085 /* Info.plist */,
@@ -292,6 +295,7 @@
 				EA0167721F05664B00F45124 /* AlertHelper.swift in Sources */,
 				EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */,
 				EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */,
+				EA553B311F1D89FC00DFB079 /* DatabaseHelper.swift in Sources */,
 				EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */,
 				EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */,
 				EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */,

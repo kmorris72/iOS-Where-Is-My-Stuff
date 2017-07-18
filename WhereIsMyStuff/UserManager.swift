@@ -36,11 +36,12 @@ class UserManager {
     func setUp() {
         _usersDatabase.observe(DataEventType.value, with: { (snapshot) in
             for userSnap in snapshot.children.allObjects as! [DataSnapshot] {
-                let user = Model.User(firstName: userSnap.childSnapshot(forPath: "firstName").value as! String, lastName: userSnap.childSnapshot(forPath: "lastName").value as! String, email: userSnap.childSnapshot(forPath: "email").value as! String, username: userSnap.childSnapshot(forPath: "username").value as! String, password: userSnap.childSnapshot(forPath: "password").value as! String, isAdmin: userSnap.childSnapshot(forPath: "isAdmin").value as! Bool)
+                let user = DatabaseHelper.parseUser(userSnap: userSnap)
                 self.setUpAddUser(user: user)
             }
         })
-        addUser(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password1: "pass", password2: "pass", isAdmin: true)
+        let admin = Model.User(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password: "pass", isAdmin: true)
+        self.setUpAddUser(user: admin)
     }
     
     private func validateInput(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?) -> Int {
