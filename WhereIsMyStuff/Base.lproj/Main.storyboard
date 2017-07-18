@@ -169,7 +169,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pW3-lc-gkk">
-                                <rect key="frame" x="109" y="346" width="197" height="44"/>
+                                <rect key="frame" x="109" y="328" width="197" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Enter Found Item"/>
@@ -178,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Af4-Rf-Gqo">
-                                <rect key="frame" x="131" y="455" width="151" height="44"/>
+                                <rect key="frame" x="131" y="412" width="151" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Search Items"/>
@@ -195,13 +195,31 @@
                                     <segue destination="yS2-0U-86y" kind="presentation" id="1U0-wv-8uM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASm-CW-asv">
+                                <rect key="frame" x="102" y="498" width="211" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="View Lost Items"/>
+                                <connections>
+                                    <segue destination="9xj-JS-p64" kind="presentation" id="MI1-9q-zJB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dht-xb-TQr">
+                                <rect key="frame" x="89" y="581" width="237" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="View Found Items"/>
+                                <connections>
+                                    <segue destination="2G4-aa-Nbu" kind="presentation" id="o4i-nJ-fAh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRf-2a-138" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3120" y="122"/>
+            <point key="canvasLocation" x="3118.840579710145" y="121.46739130434784"/>
         </scene>
         <!--Enter Lost Item View Controller-->
         <scene sceneID="B08-mB-hO5">
@@ -297,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ly2-hM-Drs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4240.579710144928" y="-518.47826086956525"/>
+            <point key="canvasLocation" x="3899" y="-601"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="gjD-RW-kO2">
@@ -556,7 +574,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iD-SV-FQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4240.579710144928" y="197.28260869565219"/>
+            <point key="canvasLocation" x="4620" y="-311"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CtJ-JL-enC">
+            <objects>
+                <viewController id="2G4-aa-Nbu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DwF-sD-rxS"/>
+                        <viewControllerLayoutGuide type="bottom" id="lGL-5T-1eZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n0C-g3-pcw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Found Items!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTc-cs-NUy">
+                                <rect key="frame" x="93" y="56" width="229" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7TJ-lP-Rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3119" y="963"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1NL-Xh-kZO">
+            <objects>
+                <viewController id="9xj-JS-p64" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8kb-8R-Nnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="lWO-mE-FIT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K1l-mP-cpD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="View Lost Items!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6R-tI-L0w">
+                                <rect key="frame" x="109" y="50" width="204" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNg-WQ-jAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3857" y="735"/>
         </scene>
         <!--Search Items-->
         <scene sceneID="8nj-O4-YA8">
@@ -616,12 +688,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgY-tI-nWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4241" y="1011"/>
+            <point key="canvasLocation" x="4619" y="444"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uPz-fd-P3k"/>
+        <segue reference="exE-EZ-Z79"/>
+        <segue reference="1U0-wv-8uM"/>
         <segue reference="BpG-SZ-R5A"/>
-        <segue reference="koE-Yb-N5Q"/>
     </inferredMetricsTieBreakers>
 </document>
