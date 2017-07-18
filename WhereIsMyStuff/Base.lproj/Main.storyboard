@@ -627,7 +627,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="foundTableView" destination="8WN-bt-GQS" id="ZuO-qV-yh3"/>
+                        <outlet property="foundTableView" destination="8WN-bt-GQS" id="vTG-u0-Pl1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7TJ-lP-Rqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -637,7 +637,7 @@
         <!--View Lost Item View Controller-->
         <scene sceneID="1NL-Xh-kZO">
             <objects>
-                <viewController title="View Lost Item View Controller" id="9xj-JS-p64" customClass="ViewLostItemViewController" customModule="WhereIsMyStuff" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="View Lost Item View Controller" id="9xj-JS-p64" customClass="ViewLostItemViewController" customModule="WhereIsMyStuff" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8kb-8R-Nnc"/>
                         <viewControllerLayoutGuide type="bottom" id="lWO-mE-FIT"/>
@@ -684,10 +684,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lostTableView" destination="vLd-ag-VmW" id="Pok-kZ-RGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNg-WQ-jAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3856.521739130435" y="734.51086956521749"/>
+            <point key="canvasLocation" x="3899" y="805"/>
         </scene>
         <!--Search Items-->
         <scene sceneID="8nj-O4-YA8">
@@ -751,7 +754,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N3k-an-VZg"/>
+        <segue reference="jDE-9O-1pN"/>
         <segue reference="1U0-wv-8uM"/>
         <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>

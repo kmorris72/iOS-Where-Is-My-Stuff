@@ -17,11 +17,11 @@ class ViewFoundItemViewController: UIViewController, UITableViewDelegate, UITabl
     
     var handle:DatabaseHandle?
     
-    var databaseReference:DatabaseReference?
+    var dbRef:DatabaseReference?
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return listVals.count
+        return listVals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,18 +35,9 @@ class ViewFoundItemViewController: UIViewController, UITableViewDelegate, UITabl
 
         // Do any additional setup after loading the view.
         
-        databaseReference = Database.database().reference()
+        dbRef = Database.database().reference()
         
-//        handle = databaseReference?.child("found items").observe(.childAdded, with: { (snapshot) in
-//        
-//            if let item = snapshot.value as? String {
-//                self.listVals.append(item)
-//                self.foundTableView.reloadData()
-//            }
-//        
-//        })
-        
-        handle = databaseReference?.child("found items").observe(.childAdded, with: { (snapshot) in
+        handle = dbRef?.child("found items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
             
             if let item = snapshot.value as? String {
                 self.listVals.append(item)

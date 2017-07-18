@@ -7,13 +7,46 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class ViewLostItemViewController: UIViewController {
+class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet weak var lostTableView: UITableView!
+    
+    var listVals:[String] = []
+    
+    var handle:DatabaseHandle?
+    
+    var dbRef:DatabaseReference?
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listVals.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.textLabel?.text = listVals[indexPath.row]
+        return cell
+    }
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        dbRef = Database.database().reference()
+        
+        handle = dbRef?.child("found items").observe(DataEventType.childAdded, with: { (snapshot) in
+            
+            if let item = snapshot.value as? String {
+                self.listVals.append(item)
+                self.lostTableView.reloadData()
+            }
+        })
+
     }
 
     override func didReceiveMemoryWarning() {
