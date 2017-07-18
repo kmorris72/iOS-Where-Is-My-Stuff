@@ -20,6 +20,11 @@ class Model {
         return instance
     }
     
+    func setUp() {
+        Model.userManager.setUp()
+        Model.itemManager.setUp()
+    }
+    
     func addUser(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?, isAdmin: Bool) -> Int {
         return Model.userManager.addUser(firstName: firstName, lastName: lastName, email: email, username: username, password1: password1, password2: password2, isAdmin: isAdmin)
     }
@@ -125,12 +130,12 @@ class Model {
     }
     
     enum ItemType: String {
-        case technological = "Technological"
-        case furniture = "Furniture"
-        case recreational = "Recreational"
-        case personal = "Personal"
-        case pet = "Pet"
-        case other = "Other"
+        case technological = "TECHNOLOGICAL"
+        case furniture = "FURNITURE"
+        case recreational = "RECREATIONAL"
+        case personal = "PERSONAL"
+        case pet = "PET"
+        case other = "OTHER"
         
         static let values = [technological, furniture, recreational, personal, pet, other]
     }

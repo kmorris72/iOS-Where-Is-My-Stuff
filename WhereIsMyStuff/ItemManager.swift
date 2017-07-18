@@ -30,6 +30,21 @@ class ItemManager {
         return instance
     }
     
+    func setUp() {
+        _lostItemsDatabase.observe(DataEventType.value, with: { (snapshot) in
+            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                let item = DatabaseHelper.parseItem(itemSnap: itemSnap)
+                self._lostItems[item.getName()] = item
+            }
+        })
+        _foundItemsDatabase.observe(DataEventType.value, with: { (snapshot) in
+            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                let item = DatabaseHelper.parseItem(itemSnap: itemSnap)
+                self._foundItems[item.getName()] = item
+            }
+        })
+    }
+    
     func addLostItem(name: String, typePosition: Int, description: String, user: Model.User) {
         let type = Model.ItemType.values[typePosition]
         let item = Model.Item(name: name, type: type, description: description, user: user)

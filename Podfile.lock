@@ -26,7 +26,6 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
-  - Firebase/Core
   - Firebase/Database
 
 SPEC CHECKSUMS:
@@ -38,6 +37,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   nanopb: 22bc080fa3955e2116b6ff3ee6c2cb3c15ab97cb
 
-PODFILE CHECKSUM: bc56fc07ed784d955d057a3ba157640ff986aed8
+PODFILE CHECKSUM: e6039a291a2922a65d23c877a6d1a82d91d9b9ca
 
 COCOAPODS: 1.2.1

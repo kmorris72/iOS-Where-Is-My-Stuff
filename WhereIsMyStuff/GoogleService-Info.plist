@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>232202434856-tgh792in9lgr6i21d1tpq5doa0nlk113.apps.googleusercontent.com</string>
+	<string>204674706369-gqle8vjn527ml1f9381i76b9prmoau9t.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.232202434856-tgh792in9lgr6i21d1tpq5doa0nlk113</string>
+	<string>com.googleusercontent.apps.204674706369-gqle8vjn527ml1f9381i76b9prmoau9t</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCKEGY9V-c99axj_qDYsUhXliMe5BVUJ4I</string>
+	<string>AIzaSyBhEfTJFaawm5AVwiOKtMa4U9zGyv42To4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>232202434856</string>
+	<string>204674706369</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>cs2340.WhereIsMyStuff</string>
 	<key>PROJECT_ID</key>
-	<string>whereismystuff-806a0</string>
+	<string>whereismystuffdatabase</string>
 	<key>STORAGE_BUCKET</key>
-	<string>whereismystuff-806a0.appspot.com</string>
+	<string>whereismystuffdatabase.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:232202434856:ios:5144e5dedf04a503</string>
+	<string>1:204674706369:ios:5144e5dedf04a503</string>
 	<key>DATABASE_URL</key>
-	<string>https://whereismystuff-806a0.firebaseio.com</string>
+	<string>https://whereismystuffdatabase.firebaseio.com</string>
 </dict>
 </plist>

@@ -23,7 +23,6 @@ class UserManager {
         _users = Dictionary<String, Model.User>()
         _emailUser = Dictionary<String, String>()
         _usersDatabase = databaseRef.child("users")
-        setUp()
     }
     
     static func getInstance() -> UserManager {
@@ -34,11 +33,15 @@ class UserManager {
         _users[user.getUsername()] = user
     }
     
-    private func setUp() {
-        addUser(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password1: "pass", password2: "pass", isAdmin: true)
+    func setUp() {
         _usersDatabase.observe(DataEventType.value, with: { (snapshot) in
-            print(self._users)
+            for userSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                let user = DatabaseHelper.parseUser(userSnap: userSnap)
+                self.setUpAddUser(user: user)
+            }
         })
+        let admin = Model.User(firstName: "admin", lastName: "one", email: "admin@gatech.edu", username: "user", password: "pass", isAdmin: true)
+        self.setUpAddUser(user: admin)
     }
     
     private func validateInput(firstName: String?, lastName: String?, email: String?, username: String?, password1: String?, password2: String?) -> Int {
