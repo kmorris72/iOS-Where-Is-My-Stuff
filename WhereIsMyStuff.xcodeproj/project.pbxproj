@@ -19,18 +19,18 @@
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
 		EA4A35531EF2BA1600177085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */; };
 		EA553B311F1D89FC00DFB079 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */; };
+		EAA273501F1E7713005AE5B5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAA2734F1F1E7713005AE5B5 /* GoogleService-Info.plist */; };
 		EAAF619E1F1D66930069EC2D /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF619D1F1D66930069EC2D /* UserManager.swift */; };
 		EAAF61A01F1D67920069EC2D /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF619F1F1D67920069EC2D /* ItemManager.swift */; };
-		EAC488C91F17B2C600E1020B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */; };
 		EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */; };
 		EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB16AB1EFDD1F8004FFB8D /* Model.swift */; };
 		F2E947EB1F18523B0063249B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E947EA1F18523B0063249B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5118445AA922D62237CDB3F4 /* Pods-WhereIsMyStuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereIsMyStuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhereIsMyStuff/Pods-WhereIsMyStuff.release.xcconfig"; sourceTree = "<group>"; };
+		05F6E01C35877AC5F8AF9015 /* Pods-WhereIsMyStuff.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereIsMyStuff.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhereIsMyStuff/Pods-WhereIsMyStuff.release.xcconfig"; sourceTree = "<group>"; };
 		B52606322A719B2926B338AA /* Pods_WhereIsMyStuff.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereIsMyStuff.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC57FF421C2650689619494E /* Pods-WhereIsMyStuff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereIsMyStuff.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhereIsMyStuff/Pods-WhereIsMyStuff.debug.xcconfig"; sourceTree = "<group>"; };
+		D29CD292E6C3DE7F6776439E /* Pods-WhereIsMyStuff.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereIsMyStuff.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhereIsMyStuff/Pods-WhereIsMyStuff.debug.xcconfig"; sourceTree = "<group>"; };
 		EA0167711F05664B00F45124 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = WhereIsMyStuff/AlertHelper.swift; sourceTree = SOURCE_ROOT; };
 		EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = WhereIsMyStuff/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA3DC2441F02CDB70060071F /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = WhereIsMyStuff/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -44,9 +44,9 @@
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4A35541EF2BA1600177085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WhereIsMyStuff/Info.plist; sourceTree = SOURCE_ROOT; };
 		EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatabaseHelper.swift; path = WhereIsMyStuff/DatabaseHelper.swift; sourceTree = SOURCE_ROOT; };
+		EAA2734F1F1E7713005AE5B5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WhereIsMyStuff/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EAAF619D1F1D66930069EC2D /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserManager.swift; path = WhereIsMyStuff/UserManager.swift; sourceTree = SOURCE_ROOT; };
 		EAAF619F1F1D67920069EC2D /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemManager.swift; path = WhereIsMyStuff/ItemManager.swift; sourceTree = SOURCE_ROOT; };
-		EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WhereIsMyStuff/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WhereIsMyStuff/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
 		F2E947EA1F18523B0063249B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -65,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EB5EF91C206B599AECFD105 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D29CD292E6C3DE7F6776439E /* Pods-WhereIsMyStuff.debug.xcconfig */,
+				05F6E01C35877AC5F8AF9015 /* Pods-WhereIsMyStuff.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9E4156B61F40CB48B231EAEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,15 +81,6 @@
 				B52606322A719B2926B338AA /* Pods_WhereIsMyStuff.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DFE42A013282B639A21C1886 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DC57FF421C2650689619494E /* Pods-WhereIsMyStuff.debug.xcconfig */,
-				5118445AA922D62237CDB3F4 /* Pods-WhereIsMyStuff.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		EA200F5E1EF9E8300018F351 /* Model */ = {
@@ -131,7 +131,7 @@
 				EA0167711F05664B00F45124 /* AlertHelper.swift */,
 				EA4A354F1EF2BA1600177085 /* Assets.xcassets */,
 				EA4A35541EF2BA1600177085 /* Info.plist */,
-				EAC488C81F17B2C600E1020B /* GoogleService-Info.plist */,
+				EAA2734F1F1E7713005AE5B5 /* GoogleService-Info.plist */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -141,8 +141,8 @@
 			children = (
 				EA4A35471EF2BA1600177085 /* WhereIsMyStuff */,
 				EA4A35461EF2BA1600177085 /* Products */,
-				DFE42A013282B639A21C1886 /* Pods */,
 				9E4156B61F40CB48B231EAEC /* Frameworks */,
+				6EB5EF91C206B599AECFD105 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA31DA2D1EFC50EF0050749E /* Assets.xcassets in Resources */,
-				EAC488C91F17B2C600E1020B /* GoogleService-Info.plist in Resources */,
+				EAA273501F1E7713005AE5B5 /* GoogleService-Info.plist in Resources */,
 				EA4A35531EF2BA1600177085 /* LaunchScreen.storyboard in Resources */,
 				EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */,
 			);
@@ -428,7 +428,7 @@
 		};
 		EA4A35581EF2BA1600177085 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC57FF421C2650689619494E /* Pods-WhereIsMyStuff.debug.xcconfig */;
+			baseConfigurationReference = D29CD292E6C3DE7F6776439E /* Pods-WhereIsMyStuff.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = TFL9V3G43X;
 				INFOPLIST_FILE = WhereIsMyStuff/Info.plist;
@@ -442,7 +442,7 @@
 		};
 		EA4A35591EF2BA1600177085 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5118445AA922D62237CDB3F4 /* Pods-WhereIsMyStuff.release.xcconfig */;
+			baseConfigurationReference = 05F6E01C35877AC5F8AF9015 /* Pods-WhereIsMyStuff.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = TFL9V3G43X;
 				INFOPLIST_FILE = WhereIsMyStuff/Info.plist;

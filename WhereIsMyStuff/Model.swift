@@ -130,12 +130,12 @@ class Model {
     }
     
     enum ItemType: String {
-        case technological = "Technological"
-        case furniture = "Furniture"
-        case recreational = "Recreational"
-        case personal = "Personal"
-        case pet = "Pet"
-        case other = "Other"
+        case technological = "TECHNOLOGICAL"
+        case furniture = "FURNITURE"
+        case recreational = "RECREATIONAL"
+        case personal = "PERSONAL"
+        case pet = "PET"
+        case other = "OTHER"
         
         static let values = [technological, furniture, recreational, personal, pet, other]
     }
