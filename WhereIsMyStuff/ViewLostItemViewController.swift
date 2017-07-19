@@ -34,20 +34,34 @@ class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITable
         
         // Do any additional setup after loading the view.
         
-        dbRef = Database.database().reference()
-        
-        handle = dbRef?.child("found items").observe(.childAdded, with: { (snapshot) in
-            
-            //            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
-            //                let itemTemp = itemSnap.value as? String
-            //                self.listVals.append(itemTemp!)
-            //                self.foundTableView.reloadData()
-            //            }
-            if let item = snapshot.value as? String {
-                self.listVals.append(item)
-                self.lostTableView.reloadData()
+        dbRef = Database.database().reference().child("lost items")
+        dbRef?.observe(DataEventType.value, with:{(snapshot) in
+         
+            if (snapshot.childrenCount > 0) {
+                
+                for items in snapshot.children.allObjects as![DataSnapshot] {
+                    
+                    let obj = items.value as? [String: AnyObject]
+                    let nameObj = obj?["name"] as? String
+                    self.listVals.append(nameObj!)
+                    self.lostTableView.reloadData()
+                }
             }
+            
         })
+        
+//        handle = dbRef?.child("found items").observe(.childAdded, with: { (snapshot) in
+//            
+//            //            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+//            //                let itemTemp = itemSnap.value as? String
+//            //                self.listVals.append(itemTemp!)
+//            //                self.foundTableView.reloadData()
+//            //            }
+//            if let item = snapshot.value as? String {
+//                self.listVals.append(item)
+//                self.lostTableView.reloadData()
+//            }
+//        })
         
     }
 
