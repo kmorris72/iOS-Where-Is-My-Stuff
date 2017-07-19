@@ -12,10 +12,22 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var map: MKMapView!
+    
+    var manager:CLLocationManager!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +35,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        self.map.showsUserLocation = true
+    }
+    
     /*
     // MARK: - Navigation
 
