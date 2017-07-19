@@ -43,7 +43,9 @@ class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITable
                     
                     let obj = items.value as? [String: AnyObject]
                     let nameObj = obj?["name"] as? String
-                    self.listVals.append(nameObj!)
+                    let typeObj = obj?["type"] as? String
+                    let strConcat = nameObj! + ": " + typeObj!
+                    self.listVals.append(strConcat)
                     self.lostTableView.reloadData()
                 }
             }
