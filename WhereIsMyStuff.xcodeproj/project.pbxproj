@@ -24,9 +24,9 @@
 		EAAF61A01F1D67920069EC2D /* ItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF619F1F1D67920069EC2D /* ItemManager.swift */; };
 		EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */; };
 		EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB16AB1EFDD1F8004FFB8D /* Model.swift */; };
+		F2D8C86E1F1FB98C004E6B7A /* ViewLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */; };
 		F2E947EB1F18523B0063249B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E947EA1F18523B0063249B /* CoreLocation.framework */; };
 		F2FCCF271F1E91A100B1CD31 /* ViewFoundItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */; };
-		F2FCCF291F1E9B7E00B1CD31 /* ViewLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCCF281F1E9B7E00B1CD31 /* ViewLostItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,9 +51,9 @@
 		EAAF619F1F1D67920069EC2D /* ItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemManager.swift; path = WhereIsMyStuff/ItemManager.swift; sourceTree = SOURCE_ROOT; };
 		EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = WhereIsMyStuff/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
+		F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLostItemViewController.swift; path = WhereIsMyStuff/ViewLostItemViewController.swift; sourceTree = SOURCE_ROOT; };
 		F2E947EA1F18523B0063249B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewFoundItemViewController.swift; path = WhereIsMyStuff/ViewFoundItemViewController.swift; sourceTree = SOURCE_ROOT; };
-		F2FCCF281F1E9B7E00B1CD31 /* ViewLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLostItemViewController.swift; path = WhereIsMyStuff/ViewLostItemViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +109,7 @@
 		EA200F601EF9E8420018F351 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F2FCCF281F1E9B7E00B1CD31 /* ViewLostItemViewController.swift */,
+				F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */,
 				F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */,
 				EA4A35481EF2BA1600177085 /* AppDelegate.swift */,
 				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
@@ -307,7 +307,7 @@
 				EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */,
 				F2FCCF271F1E91A100B1CD31 /* ViewFoundItemViewController.swift in Sources */,
 				EA4079841F058F230015020D /* EnterLostItemViewController.swift in Sources */,
-				F2FCCF291F1E9B7E00B1CD31 /* ViewLostItemViewController.swift in Sources */,
+				F2D8C86E1F1FB98C004E6B7A /* ViewLostItemViewController.swift in Sources */,
 				EAAF619E1F1D66930069EC2D /* UserManager.swift in Sources */,
 				EAAF61A01F1D67920069EC2D /* ItemManager.swift in Sources */,
 				EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */,

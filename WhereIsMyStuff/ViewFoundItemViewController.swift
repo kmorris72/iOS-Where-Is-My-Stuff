@@ -37,8 +37,13 @@ class ViewFoundItemViewController: UIViewController, UITableViewDelegate, UITabl
         
         dbRef = Database.database().reference()
         
-        handle = dbRef?.child("found items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
+        handle = dbRef?.child("found items").observe(.childAdded, with: { (snapshot) in
             
+//            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+//                let itemTemp = itemSnap.value as? String
+//                self.listVals.append(itemTemp!)
+//                self.foundTableView.reloadData()
+//            }
             if let item = snapshot.value as? String {
                 self.listVals.append(item)
                 self.foundTableView.reloadData()

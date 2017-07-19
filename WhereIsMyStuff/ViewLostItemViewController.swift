@@ -2,15 +2,15 @@
 //  ViewLostItemViewController.swift
 //  WhereIsMyStuff
 //
-//  Created by Rahul Brahmal on 7/18/17.
+//  Created by Rahul Brahmal on 7/19/17.
 //  Copyright © 2017 Fiveloop. All rights reserved.
 //
 
 import UIKit
 import FirebaseDatabase
 
-class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
+class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var lostTableView: UITableView!
     
     var listVals:[String] = []
@@ -18,8 +18,7 @@ class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITable
     var handle:DatabaseHandle?
     
     var dbRef:DatabaseReference?
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listVals.count
     }
@@ -29,24 +28,27 @@ class ViewLostItemViewController: UIViewController, UITableViewDelegate, UITable
         cell.textLabel?.text = listVals[indexPath.row]
         return cell
     }
-
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         dbRef = Database.database().reference()
         
-        handle = dbRef?.child("found items").observe(DataEventType.childAdded, with: { (snapshot) in
+        handle = dbRef?.child("found items").observe(.childAdded, with: { (snapshot) in
             
+            //            for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+            //                let itemTemp = itemSnap.value as? String
+            //                self.listVals.append(itemTemp!)
+            //                self.foundTableView.reloadData()
+            //            }
             if let item = snapshot.value as? String {
                 self.listVals.append(item)
                 self.lostTableView.reloadData()
             }
         })
-
+        
     }
 
     override func didReceiveMemoryWarning() {

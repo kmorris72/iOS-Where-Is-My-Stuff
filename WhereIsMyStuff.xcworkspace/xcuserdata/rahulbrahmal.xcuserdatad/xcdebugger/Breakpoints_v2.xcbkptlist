@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhereIsMyStuff/ViewFoundItemViewController.swift"
-            timestampString = "522099968.764972"
+            timestampString = "522102648.243916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "ViewFoundItemViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -26,91 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WhereIsMyStuff/ViewFoundItemViewController.swift"
-            timestampString = "522099968.764972"
+            timestampString = "522102648.243916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "ViewFoundItemViewController"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WhereIsMyStuff/ViewLostItemViewController.swift"
-            timestampString = "522101603.49042"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "ViewLostItemViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WhereIsMyStuff.ViewLostItemViewController.lostTableView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITableView&gt;"
-                  moduleName = "WhereIsMyStuff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewLostItemViewController.swift"
-                  timestampString = "522102082.95979"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WhereIsMyStuff.ViewLostItemViewController.lostTableView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UITableView&gt;"
-                  moduleName = "WhereIsMyStuff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewLostItemViewController.swift"
-                  timestampString = "522102082.964296"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "42">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WhereIsMyStuff.ViewLostItemViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; WhereIsMyStuff.ViewLostItemViewController"
-                  moduleName = "WhereIsMyStuff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewLostItemViewController.swift"
-                  timestampString = "522102082.967476"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "WhereIsMyStuff.ViewLostItemViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;WhereIsMyStuff.ViewLostItemViewController&gt;"
-                  moduleName = "WhereIsMyStuff"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rahulbrahmal/Documents/GT/summer2017/cs2340/iOS-Where-Is-My-Stuff/WhereIsMyStuff/ViewLostItemViewController.swift"
-                  timestampString = "522102082.969986"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
