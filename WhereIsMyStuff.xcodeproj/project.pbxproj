@@ -15,7 +15,6 @@
 		EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4079811F058F0F0015020D /* EnterFoundItemViewController.swift */; };
 		EA4079841F058F230015020D /* EnterLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4079831F058F230015020D /* EnterLostItemViewController.swift */; };
 		EA4A35491EF2BA1600177085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A35481EF2BA1600177085 /* AppDelegate.swift */; };
-		EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4A354A1EF2BA1600177085 /* ViewController.swift */; };
 		EA4A354E1EF2BA1600177085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A354C1EF2BA1600177085 /* Main.storyboard */; };
 		EA4A35531EF2BA1600177085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4A35511EF2BA1600177085 /* LaunchScreen.storyboard */; };
 		EA553B311F1D89FC00DFB079 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA553B301F1D89FC00DFB079 /* DatabaseHelper.swift */; };
@@ -26,6 +25,7 @@
 		EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFB16AB1EFDD1F8004FFB8D /* Model.swift */; };
 		F2D8C86E1F1FB98C004E6B7A /* ViewLostItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */; };
 		F2D8C8701F1FBE52004E6B7A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8C86F1F1FBE52004E6B7A /* MapViewController.swift */; };
+		F2D8C8721F203581004E6B7A /* SearchItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D8C8711F203581004E6B7A /* SearchItemsViewController.swift */; };
 		F2E947EB1F18523B0063249B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E947EA1F18523B0063249B /* CoreLocation.framework */; };
 		F2FCCF271F1E91A100B1CD31 /* ViewFoundItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,6 @@
 		EA4079831F058F230015020D /* EnterLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterLostItemViewController.swift; path = ../EnterLostItemViewController.swift; sourceTree = "<group>"; };
 		EA4A35451EF2BA1600177085 /* WhereIsMyStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereIsMyStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4A35481EF2BA1600177085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WhereIsMyStuff/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		EA4A354A1EF2BA1600177085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = WhereIsMyStuff/ViewController.swift; sourceTree = SOURCE_ROOT; };
 		EA4A354D1EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4A354F1EF2BA1600177085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = WhereIsMyStuff/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		EA4A35521EF2BA1600177085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		EAFB16AB1EFDD1F8004FFB8D /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = WhereIsMyStuff/Model.swift; sourceTree = SOURCE_ROOT; };
 		F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewLostItemViewController.swift; path = WhereIsMyStuff/ViewLostItemViewController.swift; sourceTree = SOURCE_ROOT; };
 		F2D8C86F1F1FBE52004E6B7A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = WhereIsMyStuff/MapViewController.swift; sourceTree = SOURCE_ROOT; };
+		F2D8C8711F203581004E6B7A /* SearchItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchItemsViewController.swift; path = WhereIsMyStuff/SearchItemsViewController.swift; sourceTree = SOURCE_ROOT; };
 		F2E947EA1F18523B0063249B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewFoundItemViewController.swift; path = WhereIsMyStuff/ViewFoundItemViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -111,11 +111,11 @@
 		EA200F601EF9E8420018F351 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F2D8C8711F203581004E6B7A /* SearchItemsViewController.swift */,
 				F2D8C86F1F1FBE52004E6B7A /* MapViewController.swift */,
 				F2D8C86D1F1FB98C004E6B7A /* ViewLostItemViewController.swift */,
 				F2FCCF261F1E91A100B1CD31 /* ViewFoundItemViewController.swift */,
 				EA4A35481EF2BA1600177085 /* AppDelegate.swift */,
-				EA4A354A1EF2BA1600177085 /* ViewController.swift */,
 				EA3BDBB01EFEC56300C34974 /* LoginViewController.swift */,
 				EA3DC2441F02CDB70060071F /* RegisterViewController.swift */,
 				EAFA90BB1F15AE4F00675CDE /* WelcomeViewController.swift */,
@@ -301,12 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAFA90BC1F15AE4F00675CDE /* WelcomeViewController.swift in Sources */,
+				F2D8C8721F203581004E6B7A /* SearchItemsViewController.swift in Sources */,
 				EA0167721F05664B00F45124 /* AlertHelper.swift in Sources */,
 				EA3BDBB11EFEC56300C34974 /* LoginViewController.swift in Sources */,
 				EA3DC2451F02CDB70060071F /* RegisterViewController.swift in Sources */,
 				EA553B311F1D89FC00DFB079 /* DatabaseHelper.swift in Sources */,
 				EAFB16AC1EFDD1F8004FFB8D /* Model.swift in Sources */,
-				EA4A354B1EF2BA1600177085 /* ViewController.swift in Sources */,
 				EA4079821F058F0F0015020D /* EnterFoundItemViewController.swift in Sources */,
 				F2FCCF271F1E91A100B1CD31 /* ViewFoundItemViewController.swift in Sources */,
 				EA4079841F058F230015020D /* EnterLostItemViewController.swift in Sources */,

@@ -737,10 +737,10 @@
             </objects>
             <point key="canvasLocation" x="3899" y="949"/>
         </scene>
-        <!--Search Items-->
+        <!--Search Items View Controller-->
         <scene sceneID="8nj-O4-YA8">
             <objects>
-                <viewController title="Search Items" id="c83-Dh-Ayx" sceneMemberID="viewController">
+                <viewController title="Search Items View Controller" id="c83-Dh-Ayx" customClass="SearchItemsViewController" customModule="WhereIsMyStuff" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X1w-MM-wkN"/>
                         <viewControllerLayoutGuide type="bottom" id="YGX-Gm-qNS"/>
@@ -757,30 +757,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsI-Bg-kw1">
-                                <rect key="frame" x="20" y="168" width="103" height="24"/>
+                                <rect key="frame" x="20" y="138" width="103" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EtX-OJ-oPP">
-                                <rect key="frame" x="176" y="168" width="188" height="30"/>
+                                <rect key="frame" x="176" y="138" width="188" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="getText:" destination="c83-Dh-Ayx" eventType="editingDidEnd" id="U4C-J7-BGe"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="122-Mq-Zla">
-                                <rect key="frame" x="36" y="627" width="69" height="39"/>
+                                <rect key="frame" x="36" y="648" width="69" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="onEnterButtonClick:" destination="sCt-6C-eUH" eventType="touchUpInside" id="dQl-tE-Aw7"/>
+                                    <action selector="onSearchButtonClick:" destination="c83-Dh-Ayx" eventType="touchUpInside" id="Wcz-pZ-l3U"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9q-sx-CR5">
-                                <rect key="frame" x="295" y="627" width="69" height="39"/>
+                                <rect key="frame" x="295" y="648" width="69" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
@@ -789,18 +792,48 @@
                                     <segue destination="RMw-iP-nwp" kind="presentation" id="exE-EZ-Z79"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxt-Mf-wjk">
+                                <rect key="frame" x="36" y="346" width="328" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gq3-qi-4Da">
+                                <rect key="frame" x="20" y="218" width="94" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bat-40-xho">
+                                <rect key="frame" x="175" y="191" width="188" height="79"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrF-1X-80g">
+                                <rect key="frame" x="159" y="291" width="83" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="itemName" destination="EtX-OJ-oPP" id="Irl-ho-yRb"/>
+                        <outlet property="pickerView" destination="bat-40-xho" id="s9V-cb-oy4"/>
+                        <outlet property="textDisplay" destination="sxt-Mf-wjk" id="gGF-bK-cAT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgY-tI-nWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4619" y="444"/>
+            <point key="canvasLocation" x="4618.840579710145" y="443.47826086956525"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BpG-SZ-R5A"/>
+        <segue reference="exE-EZ-Z79"/>
         <segue reference="1U0-wv-8uM"/>
-        <segue reference="3tW-XQ-Ep6"/>
+        <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>
 </document>

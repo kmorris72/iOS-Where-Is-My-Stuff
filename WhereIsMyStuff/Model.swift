@@ -33,6 +33,10 @@ class Model {
         return Model.userManager.loginUser(usernameEmail: usernameEmail, password: password)
     }
     
+//    func searchItem(itemName: String?, pickerType: String?) -> Int {
+////        return Model.itemManager.searchItem(username)
+//    }
+    
     func getName() -> String {
         return Model.userManager.getName()
     }
@@ -139,4 +143,5 @@ class Model {
         
         static let values = [technological, furniture, recreational, personal, pet, other]
     }
+    
 }

@@ -9,12 +9,23 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseDatabase
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
+//    var latVals:[Double] = []
+//    var longVals:[Double] = []
+    
     var manager:CLLocationManager!
+    
+    var handle:DatabaseHandle?
+    
+    var dbLostItemsRef:DatabaseReference?
+    var dbFoundItemsRef:DatabaseReference?
+    
+    let annotation = MKPointAnnotation()
     
     
     override func viewDidLoad() {
@@ -27,6 +38,56 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
+        
+        dbLostItemsRef = Database.database().reference().child("lost items")
+        dbFoundItemsRef = Database.database().reference().child("found items")
+        
+        dbLostItemsRef?.observe(DataEventType.value, with :{(snapshotLost) in
+            
+            if (snapshotLost.childrenCount > 0) {
+                
+                for items in snapshotLost.children.allObjects as![DataSnapshot] {
+                    
+                    let obj = items.value as? [String: AnyObject]
+                    let latObjLost = obj?["latitude"] as? Double
+                    let longObjLost = obj?["longitude"] as? Double
+                    
+                    
+//                    self.latVals.append(latObjLost!) //Maybe try and plot points directly
+//                    self.longVals.append(longObjLost!)
+                    
+                    
+//                    self.annotation.coordinate = CLLocationCoordinate2D(latitude: latObjLost!, longitude: longObjLost!)
+//                    
+//                    self.map.addAnnotation(self.annotation)
+//                    
+                }
+            }
+        })
+        
+        dbFoundItemsRef?.observe(DataEventType.value, with :{(snapshotFound) in
+            
+            if (snapshotFound.childrenCount > 0) {
+                
+                for items in snapshotFound.children.allObjects as![DataSnapshot] {
+                    
+                    let obj = items.value as? [String: AnyObject]
+                    let latObjFound = obj?["latLng"] as? Double
+                    let longObjFound = obj?["latLng"] as? Double
+                    
+                    
+//                    self.latVals.append(latObjFound!)
+//                    self.longVals.append(longObjFound!)
+                    
+                    
+//                    self.annotation.coordinate = CLLocationCoordinate2D(latitude: latObjFound!,longitude: longObjFound!)
+//                    
+//                    self.map.addAnnotation(self.annotation)
+                    
+                }
+            }
+            
+        })
         
     }
 
