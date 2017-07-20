@@ -60,8 +60,6 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
             lost_item = false
         }
         
-        print (lost_item)
-        
     }
     
     @IBAction func onSearchButtonClick(_ sender: Any) {
@@ -73,7 +71,6 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
         
         if let textTest = itemName.text {
-            print (textTest)
             self.textFromField = textTest
         }
         
@@ -86,11 +83,9 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
                     let obj = items.value as? [String: AnyObject]
                     let name = obj?["name"] as? String
                     
-                    print (name?.lowercased() == self.textFromField.lowercased())
                     if (name?.lowercased() == self.textFromField.lowercased()) {
                         let searchOne = obj?["searchDescription"] as? String
                         if let searchVal = searchOne {
-                            print (searchVal)
                             self.textDisplay.text = searchVal
                             break
                         }
