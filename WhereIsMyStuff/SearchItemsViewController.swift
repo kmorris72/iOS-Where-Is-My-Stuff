@@ -24,8 +24,6 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     var textFromField = ""
     
-    var searchDescription = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +31,7 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
         
     }
 
@@ -55,22 +54,27 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if (pickerData[row] == "Lost Items") {
+        if (pickerData[row] == "Lost Item") {
             lost_item = true
         } else {
             lost_item = false
         }
         
+        print (lost_item)
+        
     }
     
     @IBAction func onSearchButtonClick(_ sender: Any) {
-        
-        textDisplay.text = "Enter button has been selected."
         
         if (lost_item) {
             dbRef = Database.database().reference().child("lost items")
         } else {
             dbRef = Database.database().reference().child("found items")
+        }
+        
+        if let textTest = itemName.text {
+            print (textTest)
+            self.textFromField = textTest
         }
         
         dbRef?.observe(DataEventType.value, with :{(snapshot) in
@@ -82,21 +86,22 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
                     let obj = items.value as? [String: AnyObject]
                     let name = obj?["name"] as? String
                     
+                    print (name?.lowercased() == self.textFromField.lowercased())
                     if (name?.lowercased() == self.textFromField.lowercased()) {
-                        self.searchDescription = (obj?["searchDescription"] as? String)!
+                        let searchOne = obj?["searchDescription"] as? String
+                        if let searchVal = searchOne {
+                            print (searchVal)
+                            self.textDisplay.text = searchVal
+                            break
+                        }
                     } else {
-                        self.searchDescription = ""
+                        let searchVal = "No Results"
+                        self.textDisplay.text = searchVal
                     }
                 }
             }
         })
         
-        textDisplay.text = searchDescription
-    }
-    
-    
-    @IBAction func getText(_ sender: Any) {
-        textFromField = itemName.text!
     }
   
 
