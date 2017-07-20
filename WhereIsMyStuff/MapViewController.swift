@@ -54,15 +54,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     let name = obj?["name"] as? String
                     if let textName = name {
                         print (textName)
-                        self.dbInnerLostRef = Database.database().reference().child("lost items").child("boat").child("latLng")
+                        self.dbInnerLostRef = Database.database().reference().child("lost items").child(textName).child("latLng")
                         
                         self.dbInnerLostRef?.observe(DataEventType.value, with :{(snapshotInnerLost) in
                             
                             for innerItems in snapshotInnerLost.children.allObjects as![DataSnapshot] {
                                 
-                                let obj = innerItems.value as? [String: AnyObject]
+                                let obj = innerItems.value as? [String: Any]
                                 let lat = obj?["latitude"] as? String
                                 let long = obj?["longitude"] as? String
+                                
+//                                let lat = innerItems.value?["latitude"] as? Double
+//                                let long = innerItems.value?["longitude"] as Double
                                 
                                 print ("Lat: \(lat)")
                                 print ("Long: \(long)")
