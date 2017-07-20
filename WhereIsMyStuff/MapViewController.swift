@@ -25,6 +25,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var dbLostItemsRef:DatabaseReference?
     var dbFoundItemsRef:DatabaseReference?
     
+    var dbInnerLostRef:DatabaseReference?
+    
     let annotation = MKPointAnnotation()
     
     
@@ -49,9 +51,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 for items in snapshotLost.children.allObjects as![DataSnapshot] {
                     
                     let obj = items.value as? [String: AnyObject]
-                    let latObjLost = obj?["latitude"] as? Double
-                    let longObjLost = obj?["longitude"] as? Double
+                    let name = obj?["name"] as? String
+                    if let textName = name {
+                        print (textName)
+                        self.dbInnerLostRef = Database.database().reference().child("lost items").child("boat").child("latLng")
+                        
+                        self.dbInnerLostRef?.observe(DataEventType.value, with :{(snapshotInnerLost) in
+                            
+                            for innerItems in snapshotInnerLost.children.allObjects as![DataSnapshot] {
+                                
+                                let obj = innerItems.value as? [String: AnyObject]
+                                let lat = obj?["latitude"] as? String
+                                let long = obj?["longitude"] as? String
+                                
+                                print ("Lat: \(lat)")
+                                print ("Long: \(long)")
+                            }
+                            
+                        })
+                    }
                     
+                    
+                    
+//                    let latObjLost = obj?["latitude"] as? Double
+//                    let longObjLost = obj?["longitude"] as? Double
+//                    
                     
 //                    self.latVals.append(latObjLost!) //Maybe try and plot points directly
 //                    self.longVals.append(longObjLost!)
@@ -72,9 +96,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 for items in snapshotFound.children.allObjects as![DataSnapshot] {
                     
                     let obj = items.value as? [String: AnyObject]
-                    let latObjFound = obj?["latLng"] as? Double
-                    let longObjFound = obj?["latLng"] as? Double
-                    
+                    let name = obj?["name"] as? String
+                    print (name)
+//                    
+//                    let latObjFound = obj?["latLng"] as? Double
+//                    let longObjFound = obj?["latLng"] as? Double
+//                    
                     
 //                    self.latVals.append(latObjFound!)
 //                    self.longVals.append(longObjFound!)

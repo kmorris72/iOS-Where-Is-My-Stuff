@@ -32,7 +32,6 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -788,7 +788,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="onEnterButtonClick:" destination="sCt-6C-eUH" eventType="touchUpInside" id="ZCf-Y1-6oo"/>
                                     <segue destination="RMw-iP-nwp" kind="presentation" id="exE-EZ-Z79"/>
                                 </connections>
                             </button>

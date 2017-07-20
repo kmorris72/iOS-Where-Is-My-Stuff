@@ -32,11 +32,7 @@ class Model {
     func loginUser(usernameEmail: String?, password: String?) -> Int {
         return Model.userManager.loginUser(usernameEmail: usernameEmail, password: password)
     }
-    
-//    func searchItem(itemName: String?, pickerType: String?) -> Int {
-////        return Model.itemManager.searchItem(username)
-//    }
-    
+        
     func getName() -> String {
         return Model.userManager.getName()
     }
