@@ -60,15 +60,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                             
                             for innerItems in snapshotInnerLost.children.allObjects as![DataSnapshot] {
                                 
-                                let obj = innerItems.value as? [String: Any]
-                                let lat = obj?["latitude"] as? String
-                                let long = obj?["longitude"] as? String
+                                let obj = innerItems.value as! NSNumber
+//                                let lat = obj?["latitude"] as? String
+//                                let long = obj?["longitude"] as? String
                                 
 //                                let lat = innerItems.value?["latitude"] as? Double
 //                                let long = innerItems.value?["longitude"] as Double
                                 
-                                print ("Lat: \(lat)")
-                                print ("Long: \(long)")
+                                print ("Lat: \(obj)")
+                                print ("Long: \(obj)")
                             }
                             
                         })
