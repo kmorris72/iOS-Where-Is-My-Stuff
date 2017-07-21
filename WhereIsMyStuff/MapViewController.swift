@@ -15,8 +15,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
-//    var latVals:[Double] = []
-//    var longVals:[Double] = []
+    var latVals:[Double] = []
+    var longVals:[Double] = []
     
     var manager:CLLocationManager!
     
@@ -26,8 +26,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     var dbFoundItemsRef:DatabaseReference?
     
     var dbInnerLostRef:DatabaseReference?
+    var dbInnerFoundRef:DatabaseReference?
     
-    let annotation = MKPointAnnotation()
+//    let annotation = MKPointAnnotation()
     
     
     override func viewDidLoad() {
@@ -57,37 +58,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                         self.dbInnerLostRef = Database.database().reference().child("lost items").child(textName).child("latLng")
                         
                         self.dbInnerLostRef?.observe(DataEventType.value, with :{(snapshotInnerLost) in
-                            
+                            var i = 0
                             for innerItems in snapshotInnerLost.children.allObjects as![DataSnapshot] {
                                 
                                 let obj = innerItems.value as! NSNumber
-//                                let lat = obj?["latitude"] as? String
-//                                let long = obj?["longitude"] as? String
                                 
-//                                let lat = innerItems.value?["latitude"] as? Double
-//                                let long = innerItems.value?["longitude"] as Double
-                                
-                                print ("Lat: \(obj)")
-                                print ("Long: \(obj)")
+                                if (i == 0) {
+                                    self.latVals.append(Double(obj))
+                                    print ("Lat: \(obj)")
+                                    i = 1
+                                } else {
+                                    self.longVals.append(Double(obj))
+                                    print ("Long: \(obj)")
+                                    i = 0
+                                }
                             }
-                            
+                            var j = 0
+                            while (j < self.latVals.count) {
+                                
+                                let annotation = MKPointAnnotation()
+                                
+                                annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.latVals[j]), longitude: Double(self.longVals[j]))
+                                
+                                self.map.addAnnotation(annotation)
+                                
+                                j = j + 1
+                            }
                         })
                     }
-                    
-                    
-                    
-//                    let latObjLost = obj?["latitude"] as? Double
-//                    let longObjLost = obj?["longitude"] as? Double
-//                    
-                    
-//                    self.latVals.append(latObjLost!) //Maybe try and plot points directly
-//                    self.longVals.append(longObjLost!)
-                    
-                    
-//                    self.annotation.coordinate = CLLocationCoordinate2D(latitude: latObjLost!, longitude: longObjLost!)
-//                    
-//                    self.map.addAnnotation(self.annotation)
-//                    
                 }
             }
         })
@@ -100,25 +98,44 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     
                     let obj = items.value as? [String: AnyObject]
                     let name = obj?["name"] as? String
-                    print (name)
-//                    
-//                    let latObjFound = obj?["latLng"] as? Double
-//                    let longObjFound = obj?["latLng"] as? Double
-//                    
-                    
-//                    self.latVals.append(latObjFound!)
-//                    self.longVals.append(longObjFound!)
-                    
-                    
-//                    self.annotation.coordinate = CLLocationCoordinate2D(latitude: latObjFound!,longitude: longObjFound!)
-//                    
-//                    self.map.addAnnotation(self.annotation)
-                    
+                    if let textName = name {
+                        print (textName)
+                        self.dbInnerFoundRef = Database.database().reference().child("found items").child(textName).child("latLng")
+                        self.dbInnerLostRef?.observe(DataEventType.value, with :{(snapshotInnerLost) in
+                            var i = 0
+                            for innerItems in snapshotInnerLost.children.allObjects as![DataSnapshot] {
+                                
+                                let obj = innerItems.value as! NSNumber
+                                
+                                if (i == 0) {
+                                    self.latVals.append(Double(obj))
+                                    print (Double(obj))
+                                    i = 1
+                                } else {
+                                    self.longVals.append(Double(obj))
+                                    print (Double(obj))
+                                    i = 0
+                                }
+                            }
+                            var j = 0
+                            while (j < self.latVals.count) {
+                                
+                                let annotation = MKPointAnnotation()
+                                
+                                annotation.coordinate = CLLocationCoordinate2D(latitude: Double(self.latVals[j]), longitude: Double(self.longVals[j]))
+                                
+                                self.map.addAnnotation(annotation)
+                                
+                                j = j + 1
+                            }
+                        })
+                    }
                 }
             }
             
         })
         
+        map.showsUserLocation = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,10 +143,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        self.map.showsUserLocation = true
-    }
     
     /*
     // MARK: - Navigation
