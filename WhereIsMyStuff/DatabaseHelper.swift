@@ -18,7 +18,7 @@ class DatabaseHelper {
         let username = userSnap.childSnapshot(forPath: "username").value as! String
         let password = userSnap.childSnapshot(forPath: "password").value as! String
         let isAdmin = userSnap.childSnapshot(forPath: "isAdmin").value as! Bool
-        return Model.User(firstName: firstName, lastName: lastName, email: email, username: username, password: password, isAdmin: isAdmin)
+        return Model.User(firstName: firstName, lastName: lastName, email: email, username: username, password:password, isAdmin: isAdmin)
     }
     
     static func parseItem(itemSnap: DataSnapshot) -> Model.Item {

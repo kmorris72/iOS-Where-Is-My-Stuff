@@ -101,9 +101,11 @@ class UserManager {
             // may still need to add name field to database (firstname and lastName separated by a space) bc they have it in theirs
             let userRef = self._usersDatabase.child(username)
             let userMirror = Mirror(reflecting: _currentUser as Model.User)
+            var userInfo: [String : Any] = [:]
             for (label, value) in userMirror.children {
-                userRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
             }
+            userRef.setValue(userInfo)
         }
         return code
     }
