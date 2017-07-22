@@ -21,6 +21,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var map: MKMapView!
     
     var manager:CLLocationManager!
+    var currentItemLocation: CLLocationCoordinate2D!
     
     var pickerData: [Model.ItemType] = []
     var pickerType: Int = 0
@@ -96,6 +97,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
         if gesture.state == .ended {
             let point = gesture.location(in: self.map)
             let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
+            currentItemLocation = coordinate
             print (coordinate)
             var annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
@@ -116,7 +118,7 @@ class EnterLostItemViewController: UIViewController, UIPickerViewDelegate, UIPic
 //        } else {
 //            AlertHelper.makeAlert(message: "ERROR", controller: self)
 //        }
-        EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser())
+        EnterLostItemViewController.model.addLostItem(name: itemName.text!, typePosition: pickerType, description: itemDescription.text!, user: EnterLostItemViewController.model.getCurrentUser(), location: currentItemLocation)
         AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "EnterLostItem->Welcome", sender: self)})
     }
 

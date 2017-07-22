@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import FirebaseDatabase
 
 class ItemManager {
@@ -45,9 +46,9 @@ class ItemManager {
         })
     }
     
-    func addLostItem(name: String, typePosition: Int, description: String, user: Model.User) {
+    func addLostItem(name: String, typePosition: Int, description: String, user: Model.User, location: CLLocationCoordinate2D) {
         let type = Model.ItemType.values[typePosition]
-        let item = Model.Item(name: name, type: type, description: description, user: user)
+        let item = Model.Item(name: name, type: type, description: description, user: user, location: location)
         _lostItems.updateValue(item, forKey: name)
         let itemMirror = Mirror(reflecting: item)
         let itemRef = _lostItemsDatabase.child(name)
@@ -63,6 +64,11 @@ class ItemManager {
                     userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
                 }
                 itemInfo["user"] = userInfo
+            case is CLLocationCoordinate2D:
+                var locationInfo: [String : Any] = [:]
+                locationInfo["latitude"] = (value as! CLLocationCoordinate2D).latitude
+                locationInfo["longitude"] = (value as! CLLocationCoordinate2D).longitude
+                itemInfo["latLng"] = locationInfo
             default:
                 itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
             }
@@ -70,9 +76,9 @@ class ItemManager {
         itemRef.setValue(itemInfo)
     }
     
-    func addFoundItem(name: String, typePosition: Int, description: String, user: Model.User) {
+    func addFoundItem(name: String, typePosition: Int, description: String, user: Model.User, location: CLLocationCoordinate2D) {
         let type = Model.ItemType.values[typePosition]
-        let item = Model.Item(name: name, type: type, description: description, user: user)
+        let item = Model.Item(name: name, type: type, description: description, user: user, location: location)
         _foundItems.updateValue(item, forKey: name)
         let itemMirror = Mirror(reflecting: item)
         let itemRef = _foundItemsDatabase.child(name)
@@ -88,6 +94,11 @@ class ItemManager {
                     userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
                 }
                 itemInfo["user"] = userInfo
+            case is CLLocationCoordinate2D:
+                var locationInfo: [String : Any] = [:]
+                locationInfo["latitude"] = (value as! CLLocationCoordinate2D).latitude
+                locationInfo["longitude"] = (value as! CLLocationCoordinate2D).longitude
+                itemInfo["latLng"] = locationInfo
             default:
                 itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
             }

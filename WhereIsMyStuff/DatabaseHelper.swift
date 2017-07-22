@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import FirebaseDatabase
 
 class DatabaseHelper {
@@ -27,6 +28,10 @@ class DatabaseHelper {
         let description = itemSnap.childSnapshot(forPath: "description").value as! String
         let userSnap = itemSnap.childSnapshot(forPath: "user")
         let user = self.parseUser(userSnap: userSnap)
-        return Model.Item(name: name, type: type, description: description, user: user)
+        let locationSnap = itemSnap.childSnapshot(forPath: "latLng")
+        let latSnap = locationSnap.childSnapshot(forPath: "latitude")
+        let longSnap = locationSnap.childSnapshot(forPath: "longitude")
+        let location = CLLocationCoordinate2D(latitude: latSnap.value as! CLLocationDegrees, longitude: longSnap.value as! CLLocationDegrees)
+        return Model.Item(name: name, type: type, description: description, user: user, location: location)
     }
 }

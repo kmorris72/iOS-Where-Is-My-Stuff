@@ -19,6 +19,7 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var itemDescription: UITextView!
     
     @IBOutlet weak var map: MKMapView!
+    var currentItemLocation: CLLocationCoordinate2D!
     
     let manager = CLLocationManager()
     
@@ -88,6 +89,7 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
         if gesture.state == .ended {
             let point = gesture.location(in: self.map)
             let coordinate = self.map.convert(point, toCoordinateFrom: self.map)
+            currentItemLocation = coordinate
             print (coordinate)
             var annotation = MKPointAnnotation()
             annotation.coordinate = coordinate
@@ -98,7 +100,7 @@ class EnterFoundItemViewController: UIViewController, UIPickerViewDelegate, UIPi
     }
     
     @IBAction func onEnterButtonClick(_ sender: Any) {
-        EnterFoundItemViewController.model.addFoundItem(name: itemName.text!, type: pickerType, description: itemDescription.text!, user: EnterFoundItemViewController.model.getCurrentUser())
+        EnterFoundItemViewController.model.addFoundItem(name: itemName.text!, type: pickerType, description: itemDescription.text!, user: EnterFoundItemViewController.model.getCurrentUser(), location: currentItemLocation)
         AlertHelper.makeAlert(message: "Item Successfully Added!", controller: self, handler: {(alert: UIAlertAction!) in self.performSegue(withIdentifier: "EnterFoundItem->Welcome", sender: self)})
     }
 

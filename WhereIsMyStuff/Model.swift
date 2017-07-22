@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import FirebaseDatabase
 
 class Model {
@@ -45,14 +46,14 @@ class Model {
         return ItemType.values
     }
     
-    func addLostItem(name: String, typePosition: Int, description: String, user: User) {
-        Model.itemManager.addLostItem(name: name, typePosition: typePosition, description: description, user: user)
+    func addLostItem(name: String, typePosition: Int, description: String, user: User, location: CLLocationCoordinate2D) {
+        Model.itemManager.addLostItem(name: name, typePosition: typePosition, description: description, user: user, location: location)
     }
     
 
-    func addFoundItem(name: String, type: Int, description: String, user: User) {
+    func addFoundItem(name: String, type: Int, description: String, user: User, location: CLLocationCoordinate2D) {
         //Where does the user field come in??
-        return Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user)
+        return Model.itemManager.addFoundItem(name: name, typePosition: type, description: description, user: user, location: location)
     }
     
     func getLostItems() -> Array<Item> {
@@ -106,6 +107,7 @@ class Model {
         private var _type: ItemType
         private var _description: String
         private var _user: User
+        private var _location: CLLocationCoordinate2D
         
         var description: String {
             get {
@@ -113,11 +115,12 @@ class Model {
             }
         }
         
-        init(name: String, type: ItemType, description: String, user: User) {
+        init(name: String, type: ItemType, description: String, user: User, location: CLLocationCoordinate2D) {
             _name = name
             _type = type
             _description = description
             _user = user
+            _location = location
         }
         
         func getName() -> String {
