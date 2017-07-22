@@ -51,19 +51,23 @@ class ItemManager {
         _lostItems.updateValue(item, forKey: name)
         let itemMirror = Mirror(reflecting: item)
         let itemRef = _lostItemsDatabase.child(name)
+        var itemInfo: [String : Any] = [:]
         for (label, value) in itemMirror.children {
             switch value {
             case is Model.ItemType:
-                itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue((value as! Model.ItemType).rawValue)
+                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = (value as! Model.ItemType).rawValue
             case is Model.User:
                 let userMirror = Mirror(reflecting: value as! Model.User)
+                var userInfo: [String : Any] = [:]
                 for (label, value) in userMirror.children {
-                    itemRef.child("user").child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                    userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
                 }
+                itemInfo["user"] = userInfo
             default:
-                itemRef.child(label!.replacingOccurrences(of: "_", with: "")).setValue(value)
+                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
             }
         }
+        itemRef.setValue(itemInfo)
     }
     
     func addFoundItem(name: String, typePosition: Int, description: String, user: Model.User) {
