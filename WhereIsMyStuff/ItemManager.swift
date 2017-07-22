@@ -76,6 +76,7 @@ class ItemManager {
         _foundItems.updateValue(item, forKey: name)
         let itemMirror = Mirror(reflecting: item)
         let itemRef = _foundItemsDatabase.child(name)
+        var itemInfo: [String : Any] = [:]
         for (label, value) in itemMirror.children {
             switch value {
             case is Model.ItemType:
