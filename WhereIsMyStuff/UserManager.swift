@@ -105,6 +105,7 @@ class UserManager {
             for (label, value) in userMirror.children {
                 userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
             }
+            userInfo["name"] = (userInfo["firstName"] as! String) + " " + (userInfo["lastName"] as! String)
             userRef.setValue(userInfo)
         }
         return code

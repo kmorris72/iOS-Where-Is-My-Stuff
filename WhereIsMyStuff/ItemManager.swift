@@ -50,29 +50,8 @@ class ItemManager {
         let type = Model.ItemType.values[typePosition]
         let item = Model.Item(name: name, type: type, description: description, user: user, location: location)
         _lostItems.updateValue(item, forKey: name)
-        let itemMirror = Mirror(reflecting: item)
+        let itemInfo = DatabaseHelper.convertItemToDict(item: item)
         let itemRef = _lostItemsDatabase.child(name)
-        var itemInfo: [String : Any] = [:]
-        for (label, value) in itemMirror.children {
-            switch value {
-            case is Model.ItemType:
-                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = (value as! Model.ItemType).rawValue
-            case is Model.User:
-                let userMirror = Mirror(reflecting: value as! Model.User)
-                var userInfo: [String : Any] = [:]
-                for (label, value) in userMirror.children {
-                    userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
-                }
-                itemInfo["user"] = userInfo
-            case is CLLocationCoordinate2D:
-                var locationInfo: [String : Any] = [:]
-                locationInfo["latitude"] = (value as! CLLocationCoordinate2D).latitude
-                locationInfo["longitude"] = (value as! CLLocationCoordinate2D).longitude
-                itemInfo["latLng"] = locationInfo
-            default:
-                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
-            }
-        }
         itemRef.setValue(itemInfo)
     }
     
@@ -80,29 +59,8 @@ class ItemManager {
         let type = Model.ItemType.values[typePosition]
         let item = Model.Item(name: name, type: type, description: description, user: user, location: location)
         _foundItems.updateValue(item, forKey: name)
-        let itemMirror = Mirror(reflecting: item)
+        let itemInfo = DatabaseHelper.convertItemToDict(item: item)
         let itemRef = _foundItemsDatabase.child(name)
-        var itemInfo: [String : Any] = [:]
-        for (label, value) in itemMirror.children {
-            switch value {
-            case is Model.ItemType:
-                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = (value as! Model.ItemType).rawValue
-            case is Model.User:
-                let userMirror = Mirror(reflecting: value as! Model.User)
-                var userInfo: [String : Any] = [:]
-                for (label, value) in userMirror.children {
-                    userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
-                }
-                itemInfo["user"] = userInfo
-            case is CLLocationCoordinate2D:
-                var locationInfo: [String : Any] = [:]
-                locationInfo["latitude"] = (value as! CLLocationCoordinate2D).latitude
-                locationInfo["longitude"] = (value as! CLLocationCoordinate2D).longitude
-                itemInfo["latLng"] = locationInfo
-            default:
-                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
-            }
-        }
         itemRef.setValue(itemInfo)
     }
     

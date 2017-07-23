@@ -128,7 +128,11 @@ class Model {
         }
         
         func getDescription() -> String {
-            return "Name: " + _name + "/nType: "
+            return _description
+        }
+        
+        func getSearchDescription() -> String {
+            return "Name: " + _name + "\nType: " + _type.rawValue.lowercased() + "\nDescription: " + _description
         }
     }
     

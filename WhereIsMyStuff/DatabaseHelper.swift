@@ -34,4 +34,33 @@ class DatabaseHelper {
         let location = CLLocationCoordinate2D(latitude: latSnap.value as! CLLocationDegrees, longitude: longSnap.value as! CLLocationDegrees)
         return Model.Item(name: name, type: type, description: description, user: user, location: location)
     }
+    
+    static func convertItemToDict(item: Model.Item) -> Dictionary<String, Any> {
+        var itemInfo: [String : Any] = [:]
+        let searchDescription = item.getSearchDescription()
+        itemInfo["searchDescription"] = searchDescription
+        let itemMirror = Mirror(reflecting: item)
+        for (label, value) in itemMirror.children {
+            switch value {
+            case is Model.ItemType:
+                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = (value as! Model.ItemType).rawValue
+            case is Model.User:
+                let userMirror = Mirror(reflecting: value as! Model.User)
+                var userInfo: [String : Any] = [:]
+                for (label, value) in userMirror.children {
+                    userInfo[label!.replacingOccurrences(of: "_", with: "")] = value
+                }
+                userInfo["name"] = (userInfo["firstName"] as! String) + " " + (userInfo["lastName"] as! String)
+                itemInfo["user"] = userInfo
+            case is CLLocationCoordinate2D:
+                var locationInfo: [String : Any] = [:]
+                locationInfo["latitude"] = (value as! CLLocationCoordinate2D).latitude
+                locationInfo["longitude"] = (value as! CLLocationCoordinate2D).longitude
+                itemInfo["latLng"] = locationInfo
+            default:
+                itemInfo[label!.replacingOccurrences(of: "_", with: "")] = value
+            }
+        }
+        return itemInfo
+    }
 }
