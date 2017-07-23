@@ -97,6 +97,14 @@ class Model {
             return _username
         }
         
+        func getEmail() -> String {
+            return _email
+        }
+        
+        func getPassword() -> String {
+            return _password
+        }
+        
         func checkPassword(password: String) -> Bool {
             return password == _password
         }

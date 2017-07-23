@@ -7,4 +7,5 @@ target 'WhereIsMyStuff' do
 
   # Pods for WhereIsMyStuff
   pod ‘Firebase/Database’
+  pod 'Firebase/Auth'
 end

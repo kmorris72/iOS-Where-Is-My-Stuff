@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class UserManager {
     private var _currentUser: Model.User!
@@ -16,6 +17,7 @@ class UserManager {
     private static let instance = UserManager()
 
     private let databaseRef = Database.database().reference()
+    private let auth = Auth.auth()
     
     private let _usersDatabase: DatabaseReference
     
@@ -132,6 +134,7 @@ class UserManager {
                 if (!user.checkPassword(password: _password)) {
                     return 4
                 } else {
+                    auth.createUser(withEmail: _currentUser.getEmail(), password: _currentUser.getPassword(), completion: nil)
                     _currentUser = user
                     return 0
                 }
