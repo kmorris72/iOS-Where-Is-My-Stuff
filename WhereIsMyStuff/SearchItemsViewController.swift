@@ -10,19 +10,21 @@ import UIKit
 import FirebaseDatabase
 
 class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    private let model = Model.getInstance()
 
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var textDisplay: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     
     var handle:DatabaseHandle?
-    var dbRef:DatabaseReference?
     
-    var pickerData = ["Lost Item", "Found Item"]
+    private let lostItemsDatabase = Database.database().reference().child("lost items")
+    private let foundItemsDatabase = Database.database().reference().child("found items")
+
+    private var pickerData = ["Lost Item", "Found Item"]
     
-    var lost_item = true
-    
-    var textFromField = ""
+    private var lost_item = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,43 +64,64 @@ class SearchItemsViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     @IBAction func onSearchButtonClick(_ sender: Any) {
-        
-        if (lost_item) {
-            dbRef = Database.database().reference().child("lost items")
-        } else {
-            dbRef = Database.database().reference().child("found items")
-        }
-        
-        if let textTest = itemName.text {
-            self.textFromField = textTest
-        }
-        
-        dbRef?.observe(DataEventType.value, with :{(snapshot) in
-            
-            if (snapshot.childrenCount > 0) {
-                
-                for items in snapshot.children.allObjects as! [DataSnapshot] {
+        lostItemsDatabase.observe(DataEventType.value, with :{ (snapshot) in
+            if (snapshot.hasChildren()) {
+                for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                    let itemToAdd = DatabaseHelper.parseItem(itemSnap: itemSnap)
+                    self.model.addItem(item: itemToAdd, foundItem: !self.lost_item)
                     
-                    let obj = items.value as? [String: AnyObject]
-                    let name = obj?["name"] as? String
-                    
-                    if (name?.lowercased() == self.textFromField.lowercased()) {
-                        let searchOne = obj?["searchDescription"] as? String
-                        if let searchVal = searchOne {
-                            self.textDisplay.text = searchVal
-                            break
-                        }
-                    } else {
-                        let searchVal = "No Results"
-                        self.textDisplay.text = searchVal
-                    }
+//                    let obj = items.value as? [String: AnyObject]
+//                    let name = obj?["name"] as? String
+//                    if (name?.lowercased() == self.textFromField.lowercased()) {
+//                        let searchOne = obj?["searchDescription"] as? String
+//                        if let searchVal = searchOne {
+//                            self.textDisplay.text = searchVal
+//                            break
+//                        }
+//                    } else {
+//                        let searchVal = "No Results"
+//                        self.textDisplay.text = searchVal
+//                    }
                 }
             }
         })
         
+        foundItemsDatabase.observe(DataEventType.value, with :{ (snapshot) in
+            if (snapshot.hasChildren()) {
+                for itemSnap in snapshot.children.allObjects as! [DataSnapshot] {
+                    let itemToAdd = DatabaseHelper.parseItem(itemSnap: itemSnap)
+                    self.model.addItem(item: itemToAdd, foundItem: !self.lost_item)
+                    
+                    //                    let obj = items.value as? [String: AnyObject]
+                    //                    let name = obj?["name"] as? String
+                    //                    if (name?.lowercased() == self.textFromField.lowercased()) {
+                    //                        let searchOne = obj?["searchDescription"] as? String
+                    //                        if let searchVal = searchOne {
+                    //                            self.textDisplay.text = searchVal
+                    //                            break
+                    //                        }
+                    //                    } else {
+                    //                        let searchVal = "No Results"
+                    //                        self.textDisplay.text = searchVal
+                    //                    }
+                }
+            }
+        })
+        
+        if (model.searchFound(foundItem: !lost_item, name: itemName.text!)) {
+            let itemText: String
+            if (!lost_item) {
+                itemText = "FOUND ITEM\n"
+            } else {
+                itemText = "LOST ITEM\n"
+            }
+            let srchDescription = itemText + model.searchResult(foundItem: !lost_item, name: itemName.text!)
+            self.textDisplay.text = srchDescription
+        } else {
+            self.textDisplay.text = "No Results"
+        }
     }
   
-
     /*
     // MARK: - Navigation
 

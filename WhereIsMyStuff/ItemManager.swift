@@ -46,6 +46,14 @@ class ItemManager {
         })
     }
     
+    func addItem(item: Model.Item, foundItem: Bool) {
+        if (foundItem) {
+            _foundItems[item.getName()] = item
+        } else {
+            _lostItems[item.getName()] = item
+        }
+    }
+    
     func addLostItem(name: String, typePosition: Int, description: String, user: Model.User, location: CLLocationCoordinate2D) {
         let type = Model.ItemType.values[typePosition]
         let item = Model.Item(name: name, type: type, description: description, user: user, location: location)
@@ -82,9 +90,9 @@ class ItemManager {
     
     func searchResult(foundItem: Bool, name: String) -> String {
         if (foundItem) {
-            return _foundItems[name]!.getDescription()
+            return _foundItems[name]!.getSearchDescription()
         } else {
-            return _lostItems[name]!.getDescription()
+            return _lostItems[name]!.getSearchDescription()
         }
     }
     

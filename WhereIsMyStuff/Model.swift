@@ -46,10 +46,13 @@ class Model {
         return ItemType.values
     }
     
+    func addItem(item: Item, foundItem: Bool) {
+        Model.itemManager.addItem(item: item, foundItem: foundItem)
+    }
+    
     func addLostItem(name: String, typePosition: Int, description: String, user: User, location: CLLocationCoordinate2D) {
         Model.itemManager.addLostItem(name: name, typePosition: typePosition, description: description, user: user, location: location)
     }
-    
 
     func addFoundItem(name: String, type: Int, description: String, user: User, location: CLLocationCoordinate2D) {
         //Where does the user field come in??
