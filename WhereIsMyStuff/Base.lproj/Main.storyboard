@@ -516,7 +516,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="onEnterButtonClick:" destination="sCt-6C-eUH" eventType="touchUpInside" id="TJy-2W-KT3"/>
                                     <segue destination="RMw-iP-nwp" kind="presentation" id="BTm-Qb-Qc4"/>
                                 </connections>
                             </button>
@@ -828,8 +827,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="exE-EZ-Z79"/>
         <segue reference="1U0-wv-8uM"/>
+        <segue reference="koE-Yb-N5Q"/>
         <segue reference="BpG-SZ-R5A"/>
     </inferredMetricsTieBreakers>
 </document>
